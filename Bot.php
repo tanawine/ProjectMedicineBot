@@ -74,7 +74,7 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 			}
-			else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"To day homeWork?") ) { //&& $event['message']['text'] == "ไร"
+			else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"homeWork") ) { //&& $event['message']['text'] == "ไร"
 			// Get text sent
 			$text = "Subjects have 1. ";
 			
