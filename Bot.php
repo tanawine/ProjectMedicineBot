@@ -10,8 +10,8 @@
 		// Loop through each event
 		foreach ($events['events'] as $event) {
 			// Reply only when message sent is in 'text' format
-			 $textUser = $event['message']['text'];
-			 $text1 = "ไร";
+			 //$textUser = $event['message']['text'];
+			// $text1 = "ไร";
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"ไร") ) { //&& $event['message']['text'] == "ไร"
 				// Get text sent
 				$text = "ตำแหน่งไหน  ";
@@ -36,6 +36,26 @@
 			}else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "สวัสดี") {
 				// Get text sent
 				$text = "สวัสดีจ้า ";
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+		
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages],
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
+			}else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "ชื่ออะไร") {
+				// Get text sent
+				$text = "ชื่อ Medicine Bot จ้า ";
 				// Get replyToken
 				$replyToken = $event['replyToken'];
 		
