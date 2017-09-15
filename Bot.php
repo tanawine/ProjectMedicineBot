@@ -36,7 +36,7 @@
 			}
 			else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"ตัว") ) { //&& $event['message']['text'] == "ไร"
 				// Get text sent
-				$text = "เป็นส่วนนึ่งของ  ";
+				$text = "เป็นส่วนหนึ่งของ  ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -87,5 +87,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK5";
-	echo "OK9999";
+	echo "OK5";
+	//echo "OK9999";
