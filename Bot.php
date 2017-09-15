@@ -12,7 +12,7 @@
 			// Reply only when message sent is in 'text' format
 			 $textUser = $event['message']['text'];
 			 $text1 = "ไร";
-			if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"ปวดตัว") ) { //&& $event['message']['text'] == "ไร"
+			if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"ปวดตว") ) { //&& $event['message']['text'] == "ไร"
 				// Get text sent
 				$text = "วิธีใช้งาน คือ 1.  ";
 				
