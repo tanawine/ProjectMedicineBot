@@ -36,7 +36,7 @@
 				$ch = curl_init($url);
 			
 			}
-			 if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"คอ") ) { //&& $event['message']['text'] == "ไร"
+			else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"คอ") ) { //&& $event['message']['text'] == "ไร"
 				// Get text sent
 
 				$text = "ปวดคอตรงไหน  ";
