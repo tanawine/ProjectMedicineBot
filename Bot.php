@@ -58,6 +58,28 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
+			 }else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"ไข้") ) { //&& $event['message']['text'] == "ไร"
+				// Get text sent
+
+				$text = "อุณหภูมิเท่าไร  ";
+				
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+				
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages],
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
 			 }else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "สวัสดี") {
 				// Get text sent
 				$text = "สวัสดีจ้า ";
@@ -111,5 +133,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK545";
-	echo "OK999";
+	echo "OK545";
+	//echo "OK999";
