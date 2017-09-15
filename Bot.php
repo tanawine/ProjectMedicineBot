@@ -36,10 +36,10 @@
 				$ch = curl_init($url);
 			
 			}
-			else if (strpos( $textUser,"คอ") ||  $event['message']['text'] == "คอ" ) { //&& $event['message']['text'] == "ไร"
+			else if (strpos( $textUser,"ครั้ง") ||  $event['message']['text'] == "ครั้ง" ) { //&& $event['message']['text'] == "ไร"
 				// Get text sent
 
-				$text = "ปวดคอตรงไหน  ";
+				$text = "ปวดคอตรงไหน ลองครั้ง ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -155,5 +155,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK545";
-	echo "OK999";
+	echo "OK545";
+	//echo "OK999";
