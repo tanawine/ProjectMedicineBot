@@ -11,10 +11,10 @@
 		foreach ($events['events'] as $event) {
 			// Reply only when message sent is in 'text' format
 			 $textUser = $event['message']['text'];
-			// $text1 = "ไร";
-			if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"ไร") ) { //&& $event['message']['text'] == "ไร"
+			 //$text1 = "ไร";
+			if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"me") ) { //&& $event['message']['text'] == "ไร"
 				// Get text sent
-				$text = "ตำแหน่งไหน  ";
+				$text = "what?  ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -74,7 +74,7 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 			}
-			else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"ตา") ) { //&& $event['message']['text'] == "ไร"
+			else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"ต") ) { //&& $event['message']['text'] == "ไร"
 			// Get text sent
 			$text = "วิธีใช้งาน คือ 1.  ";
 			
@@ -107,5 +107,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK5";
-	echo "OK86999";
+	echo "OK5";
+	//echo "OK86999";
