@@ -36,7 +36,7 @@
 				$ch = curl_init($url);
 			
 			}
-			else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"คอ") ) { //&& $event['message']['text'] == "ไร"
+			else if (strpos( $textUser,"คอ") ) { //&& $event['message']['text'] == "ไร"
 				// Get text sent
 
 				$text = "ปวดคอตรงไหน  ";
@@ -155,5 +155,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK545";
-	echo "OK999";
+	echo "OK545";
+	//echo "OK999";
