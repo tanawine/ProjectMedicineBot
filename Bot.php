@@ -35,7 +35,7 @@
 				$ch = curl_init($url);
 			} else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "สวัสดี") {
 				// Get text sent
-				$text = "สวัสดีจ้า " . $event['source']['userId'];
+				$text = "สวัสดีจ้า ";
 				// Get replyToken
 				$replyToken = $event['replyToken'];
 		
