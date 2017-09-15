@@ -74,6 +74,28 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 			}
+			else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"ตา") ) { //&& $event['message']['text'] == "ไร"
+			// Get text sent
+			$text = "วิธีใช้งาน คือ 1.  ";
+			
+			// Get replyToken
+			$replyToken = $event['replyToken'];
+			
+			// Build message to reply back
+			$messages = [
+				'type' => 'text',
+				'text' => $text
+			];
+			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$ch = curl_init($url);
+		}
 				//$ch = curl_init($url);
 				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -85,5 +107,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK5";
-	echo "OK86999";
+	echo "OK5";
+	//echo "OK86999";
