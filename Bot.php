@@ -14,7 +14,7 @@
 			 //$text1 = "ไร";
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"me") ) { //&& $event['message']['text'] == "ไร"
 				// Get text sent
-				if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"homeWork") ) {
+
 				$text = "what?  ";
 				
 				// Get replyToken
@@ -34,7 +34,8 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
-			}}else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "สวัสดี") {
+			
+			}else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "สวัสดี") {
 				// Get text sent
 				$text = "สวัสดีจ้า ";
 				// Get replyToken
@@ -75,7 +76,7 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 			}
-			else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"now") ) { //&& $event['message']['text'] == "ไร"
+			else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"you") ) { //&& $event['message']['text'] == "ไร"
 			// Get text sent
 			$text = "Subjects have 1. ";
 			
@@ -108,5 +109,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK545";
-	//echo "OK86999";
+	//echo "OK545";
+	echo "OK999";
