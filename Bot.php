@@ -80,10 +80,10 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
-			 }else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"ไร้") ) { //&& $event['message']['text'] == "ไร"
+			 }else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"ปวดตัว") ) { //&& $event['message']['text'] == "ไร"
 				// Get text sent
 
-				$text = "ไม่สบายหรือเปล่า?  ";
+				$text = "ปวดมากไหม  ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -155,5 +155,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK545";
-	//echo "OK999";
+	//echo "OK545";
+	echo "OK999";
