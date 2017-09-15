@@ -12,7 +12,7 @@
 			// Reply only when message sent is in 'text' format
 			 $textUser = $event['message']['text'];
 			 //$text1 = "ไร";
-		 if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"me") ) { //&& $event['message']['text'] == "ไร"
+		 if ($event['type'] == 'message' && $event['message']['type'] == 'text' && strpos( $textUser,"love") ) { //&& $event['message']['text'] == "ไร"
 				// Get text sent
 
 				$text = "what?  ";
@@ -88,5 +88,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK545";
-	echo "OK999";
+	echo "OK545";
+	//echo "OK999";
