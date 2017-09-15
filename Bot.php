@@ -107,5 +107,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK5";
-	//echo "OK86999";
+	//echo "OK5";
+	echo "OK86999";
