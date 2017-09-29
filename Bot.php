@@ -80,11 +80,14 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
-			 }else if (strpos( $textUser,"ไอ") ||  $event['message']['text'] == "ไอ" || strpos( $textUser,"ไอเจ็บคอ") ||  $event['message']['text'] == "ไอเจ็บคอ" || strpos( $textUser,"ไอค่ะ") ||  $event['message']['text'] == "ไอค่ะ" || strpos( $textUser,"ไอครับ") ||  $event['message']['text'] == "ไอครับ") { //&& $event['message']['text'] == "ไร"
+			 }
+			else if (strpos( $textUser,"ไอ") ||  $event['message']['text'] == "ไอ" || strpos( $textUser,"ไอเจ็บคอ") ||  $event['message']['text'] == "ไอเจ็บคอ" || strpos( $textUser,"ไอค่ะ") ||  $event['message']['text'] == "ไอค่ะ" || strpos( $textUser,"ไอครับ") ||  $event['message']['text'] == "ไอครับ") { //&& $event['message']['text'] == "ไร"
 				// Get text sent
 
 				$text = "ถ้าอาการไอแบบมีเสมหะ หมอแนะนำว่า ให้ใช้ตัวยาที่มีส่วนประกอบของ Guaifenesin ซึ่งช่วยบรรเทาอาการไอชนิดมีเสมหะ
-				       โดยยาที่หาซื้อได้ทั่วไปคือ Bromhexine หรือ Bisolvon ";
+				       โดยยาที่หาซื้อได้ทั่วไปคือ Bromhexine หรือ Bisolvon 
+				       กรณี อาการไอแบบไม่มีเสมหะ หมอแนะนำว่าดูแลสุขภาพตัวเอง ดื่มน้ำอุ่นก็จะช่วยบรรเทาอาการได้ครับ และควรงดอาหารรสเผ็ดจัด น้ำแข็ง น้ำเย็นจัด ของทอด เหล้าและบุหรี่ครับ
+				       (กรณี อยากเห็นภาพตัวอย่างยา พิมพ์คำว่า Bromhexine หรือ Bisolvon)";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -105,7 +108,7 @@
 				$ch = curl_init($url);
 				
 				
-			
+			}
 			else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "ชื่ออะไร") {
 				// Get text sent
 				$text = "ชื่อ Medicine Bot จ้า ";
