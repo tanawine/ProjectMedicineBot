@@ -12,7 +12,7 @@
 			// Reply only when message sent is in 'text' format
 			 $textUser = $event['message']['text'];
 			 //$text1 = "ไร";
-		 if (strpos( $textUser,"Mom") ||  $event['message']['text'] == "ดีจ้า" ) { //&& $event['message']['text'] == "ไร"
+		 if (strpos( $textUser,"จ้า") ||  $event['message']['text'] == "จ้า" ) { //&& $event['message']['text'] == "ไร"
 				// Get text sent
 
 				$text = "วันนี้สบายดีไหมครับ";
@@ -155,5 +155,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK545";
-	echo "OK999";
+	echo "OK545";
+	//echo "OK999";
