@@ -84,8 +84,7 @@
 				// Get text sent
 
 				$text = "ถ้าอาการไอแบบมีเสมหะ หมอแนะนำว่า ให้ใช้ตัวยาที่มีส่วนประกอบของ Guaifenesin ซึ่งช่วยบรรเทาอาการไอชนิดมีเสมหะ
-				       โดยยาที่หาซื้อได้ทั่วไปคือ Bromhexine หรือ Bisolvon 
-				       (กรณี อยากเห็นภาพตัวอย่างยา พิมพ์คำว่า Bromhexine หรือ Bisolvon) ";
+				       โดยยาที่หาซื้อได้ทั่วไปคือ Bromhexine หรือ Bisolvon ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -140,5 +139,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK545";
-	echo "OK999";
+	echo "OK545";
+	//echo "OK999";
