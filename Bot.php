@@ -84,7 +84,7 @@
 			else if (strpos( $textUser,"ไอ") ||  $event['message']['text'] == "ไอ" || strpos( $textUser,"ไอเจ็บคอ") ||  $event['message']['text'] == "ไอเจ็บคอ" || strpos( $textUser,"ไอค่ะ") ||  $event['message']['text'] == "ไอค่ะ" || strpos( $textUser,"ไอครับ") ||  $event['message']['text'] == "ไอครับ") { //&& $event['message']['text'] == "ไร"
 				// Get text sent
 
-				$text = "\t\tถ้าอาการไอแบบมีเสมหะ หมอแนะนำว่า ให้ใช้ตัวยาที่มีส่วนประกอบของ Guaifenesin ซึ่งช่วยบรรเทาอาการไอชนิดมีเสมหะ\tโดยยาที่หาซื้อได้ทั่วไปคือ Bromhexine หรือ Bisolvon \n*****กรณี อยากเห็นภาพตัวอย่างยา พิมพ์คำว่า Bromhexine หรือ Bisolvon \n\n กรณี มีอาการไอแบบไม่มีเสมหะ พิมพ์คำว่า ไอแบบไม่มีเสมหะ";
+				$text = "\t\tถ้าอาการไอแบบมีเสมหะ หมอแนะนำว่า ให้ใช้ตัวยาที่มีส่วนประกอบของ Guaifenesin ซึ่งช่วยบรรเทาอาการไอชนิดมีเสมหะ\tโดยยาที่หาซื้อได้ทั่วไปคือ Bromhexine หรือ Bisolvon \n***กรณี อยากเห็นภาพตัวอย่างยา พิมพ์คำว่า Bromhexine หรือ Bisolvon \n\n กรณี มีอาการไอแบบไม่มีเสมหะ พิมพ์คำว่า ไอแบบไม่มีเสมหะ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
