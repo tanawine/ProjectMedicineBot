@@ -129,7 +129,7 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 			 }
-			else if (strpos( $textUser,"ไข้") ||  $event['message']['text'] == "ไข้" || strpos( $textUser,"มีไข้") ||  $event['message']['text'] == "มีไข้" ) { //&& $event['message']['text'] == "ไร"
+			else if (strpos( $textUser,"ไข้") ||  $event['message']['text'] == "ไข้" || strpos( $textUser,"มีไข้") ||  $event['message']['text'] == "มีไข้" ) {
 				// Get text sent
 
 				$text = "อาการของคนมีไข้ คือ อุณหภูมิกายเพิ่มสูงกว่าปกติ คือ 36 หรือ 37.2 องศา หากวัดจากทางปาก เวลาที่มีไข้ไม่จำเป็นว่าทุกส่วนของร่างกายจะต้องร้อนเท่ากันหมดนะครับ อาจร้อนที่ศีรษะ ลำตัว และแขนขา แต่ฝ่ามือฝ่าเท้ายังเย็นเป็นปกติก็ได้นะครับ โดยยาที่ใช้ลดไข้คือ Paracetamol โดยไข้หวัดธรรมดาจะมีอาการ 3-5 วัน ถ้ามีอาการมากกว่านี้แนะนำให้พบแพทย์นะครับ \n*กรณีอยากเห็นรูปตัวอย่างยาให้พิมพ์คำว่า paracetamol \n**กรณีอยากทราบวิธีดูตัวเองพิมพ์ ไข้TC";
@@ -163,5 +163,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK545";
-	echo "OK999";
+	echo "OK545";
+	//echo "OK999";
