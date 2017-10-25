@@ -80,10 +80,10 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 			 }
-			else if (strpos( $textUser,"ไอ") ||  $event['message']['text'] == "ไอ" || strpos( $textUser,"ไอเจ็บคอ") ||  $event['message']['text'] == "ไอเจ็บคอ" || strpos( $textUser,"ไอค่ะ") ||  $event['message']['text'] == "ไอค่ะ" || strpos( $textUser,"ไอครับ") ||  $event['message']['text'] == "ไอครับ") { //&& $event['message']['text'] == "ไร"
+			else if (strpos( $textUser,"ไอ") ||  $event['message']['text'] == "ไอ" || strpos( $textUser,"ไอเจ็บคอ") ||  $event['message']['text'] == "ไอเจ็บคอ" || strpos( $textUser,"ไอค่ะ") ||  $event['message']['text'] == "ไอค่ะ" || strpos( $textUser,"ไอครับ") ||  $event['message']['text'] == "ไอครับ"||strpos( $textUser,"เจ็บคอ") ||  $event['message']['text'] == "เจ็บคอ") { //&& $event['message']['text'] == "ไร"
 				// Get text sent
 
-				$text = "\t\tถ้าอาการไอแบบมีเสมหะ หมอแนะนำว่า ให้ใช้ตัวยาที่มีส่วนประกอบของ Guaifenesin ซึ่งช่วยบรรเทาอาการไอชนิดมีเสมหะ\tโดยยาที่หาซื้อได้ทั่วไปคือ Bromhexine หรือ Bisolvon \n***กรณี อยากเห็นภาพตัวอย่างยา พิมพ์คำว่า Bromhexine หรือ Bisolvon \n\n กรณี มีอาการไอแบบไม่มีเสมหะ พิมพ์คำว่า ไอแบบไม่มีเสมหะ";
+				$text = "\t\tถ้ามีอาการไอแบบมีเสมหะ หมอแนะนำว่า ให้ใช้ตัวยาที่มีส่วนประกอบของ Guaifenesin ซึ่งช่วยบรรเทาอาการไอชนิดมีเสมหะ\tโดยยาที่หาซื้อได้ทั่วไปคือ Bromhexine หรือ Bisolvon \n***กรณี อยากเห็นภาพตัวอย่างยา พิมพ์คำว่า Bromhexine หรือ Bisolvon \n\n กรณี มีอาการไอแบบไม่มีเสมหะ พิมพ์คำว่า ไอแบบไม่มีเสมหะ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -105,12 +105,15 @@
 				
 				
 			}
-			else if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "ชื่ออะไร") {
-				// Get text sent
-				$text = "ชื่อ Medicine Bot จ้า ";
+			else if (strpos( $textUser,"เมื่อย") ||  $event['message']['text'] == "เมื่อย" ) { 
+
+				$text = "กรณีที่ปวดเมื่อยกล้ามเนื้อจากการทำกิจกรรมในชีวิตประจำวัน ที่เป็นอาการปวดเมื่อยเบื้องต้น หมอแนะนำให้ใช้แผ่นแปะบรรเทาปวด หรือใช้ยาแก้ปวดเมื่อยชนิดนวด
+				\n***กรณีอยากเห็นรูปตัวอย่างยาให้พิมพ์คำว่า plaster หรือ ยาแก้ปวดเมื่อย  \n**กรณีอยากทราบวิธีดูแลปวดเมื่อยตัวเองพิมพ์ "
+				 ";
+				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
-		
+				
 				// Build message to reply back
 				$messages = [
 					'type' => 'text',
@@ -125,12 +128,11 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
-			} 
-// ไข้ 
+			 }
 			else if (strpos( $textUser,"ไข้") ||  $event['message']['text'] == "ไข้" || strpos( $textUser,"มีไข้") ||  $event['message']['text'] == "มีไข้" ) { //&& $event['message']['text'] == "ไร"
 				// Get text sent
 
-				$text = "อาการของคนมีไข้ คือ อุณหภูมิกายเพิ่มสูงกว่าปกติ คือ 36 หรือ 37.2องศา หากวัดจากทางปาก เวลาที่มีไข้ไม่จำเป็นว่าทุกส่วนของร่างกายจะต้องร้อนเท่ากันหมดนะครับ อาจร้อนที่ศีรษะ ลำตัว และแขนขา แต่ฝ่ามือฝ่าเท้ายังเย็นเป็นปกติก็ได้นะครับ โดยยาที่ใช้ลดไข้คือ Paracetamol โดยไข้หวัดธรรมดาจะมีอาการ 3-5 วัน ถ้ามีอาการมากกว่านี้แนะนำให้พบแพทย์นะครับ \n*กรณีอยากเห็นรูปตัวอย่างยาให้พิมพ์คำว่า paracetamol \n**กรณีอยากทราบวิธีดูตัวเองพิมพ์ ไข้TC";
+				$text = "อาการของคนมีไข้ คือ อุณหภูมิกายเพิ่มสูงกว่าปกติ คือ 36 หรือ 37.2 องศา หากวัดจากทางปาก เวลาที่มีไข้ไม่จำเป็นว่าทุกส่วนของร่างกายจะต้องร้อนเท่ากันหมดนะครับ อาจร้อนที่ศีรษะ ลำตัว และแขนขา แต่ฝ่ามือฝ่าเท้ายังเย็นเป็นปกติก็ได้นะครับ โดยยาที่ใช้ลดไข้คือ Paracetamol โดยไข้หวัดธรรมดาจะมีอาการ 3-5 วัน ถ้ามีอาการมากกว่านี้แนะนำให้พบแพทย์นะครับ \n*กรณีอยากเห็นรูปตัวอย่างยาให้พิมพ์คำว่า paracetamol \n**กรณีอยากทราบวิธีดูตัวเองพิมพ์ ไข้TC";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
