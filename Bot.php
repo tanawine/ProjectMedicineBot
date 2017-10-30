@@ -58,12 +58,12 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
-			 }else if (strpos( $textUser,"ป่วย") ||  $event['message']['text'] != "ป่วย" 
-				   || strpos( $textUser,"ไม่สบาย") ||  $event['message']['text'] != "ไม่สบาย" 
+			 }else if (strpos( $textUser,"ป่วย") ||  $event['message']['text'] !== "ป่วย" 
+				   || strpos( $textUser,"ไม่สบาย") ||  $event['message']['text'] !== "ไม่สบาย" 
 				   || strpos( $textUser,"ไม่ok") ||  $event['message']['text'] == "ไม่ok"
 				   ||strpos( $textUser,"ไม่โอเค") ||  $event['message']['text'] == "ไม่โอเค"
-				   ||strpos( $textUser,"ไม่ค่อยสบาย") ||  $event['message']['text'] != "ไม่ค่อยสบาย"
-				  ||strpos( $textUser,"ไม่ค่อยดี") ||  $event['message']['text'] != "ไม่ค่อยดี") { 
+				   ||strpos( $textUser,"ไม่ค่อยสบาย") ||  $event['message']['text'] !== "ไม่ค่อยสบาย"
+				  ||strpos( $textUser,"ไม่ค่อยดี") ||  $event['message']['text'] !== "ไม่ค่อยดี") { 
 
 				$text = "เป็นอะไรไหนบอกหมอได้นะครับ บอกทีละอาการจะได้ให้คำแนะนำได้ง่ายๆ ";
 				
