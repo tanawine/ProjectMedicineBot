@@ -106,7 +106,7 @@
 				
 			}
 			else if (strpos( $textUser,"เมื่อย") ||  $event['message']['text'] == "เมื่อย"||strpos( $textUser,"ปวดแขน") ||  $event['message']['text'] == "ปวดแขน"||strpos( $textUser,"ปวดขา") ||  $event['message']['text'] == "ปวดขา"||strpos( $textUser,"ปวดเข่า") ||  $event['message']['text'] == "ปวดเข่า"||strpos( $textUser,"ปวดไหล่") ||  $event['message']['text'] == "ปวดไหล่"||strpos( $textUser,"ปวดหลัง
-			") ||  $event['message']['text'] == "ปวดหลัง"||strpos( $textUser,"ปวดตัว") ||  $event['message']['text'] == "ปวดตัว"||strpos( $textUser,"ปวดกล้ามเนื้อ") ||  $event['message']['text'] == "ปวดกล้ามเนื้อ"||strpos( $textUser,"ปวดต้นขา") ||  $event['message']['text'] == "ปวดต้นขา") { 
+			") ||  $event['message']['text'] == "ปวดหลัง"||strpos( $textUser,"ปวดตัว") ||  $event['message']['text'] == "ปวดตัว"||strpos( $textUser,"ปวดต้นขา") ||  $event['message']['text'] == "ปวดต้นขา") { 
 
 				$text = "\tกรณีที่ปวดเมื่อยกล้ามเนื้อจากการทำกิจกรรมในชีวิตประจำวัน ที่เป็นอาการปวดเมื่อยเบื้องต้น หมอแนะนำให้ใช้แผ่นแปะบรรเทาปวด หรือใช้ยาแก้ปวดเมื่อยชนิดนวด
 				\n*กรณีอยากเห็นรูปตัวอย่างยาให้พิมพ์คำว่า plaster หรือ ยาแก้ปวดกล้ามเนื้อ  \n**อยากทราบวิธีดูแลอาการปวดเมื่อย พิมพ์  ปวดTC\n***อยากทราบ ความแตกต่างของยาแก้ปวดเมื่อยชนิดนวด แบบร้อน และ แบบเย็น  พิมพ์  แตกต่างยาแก้ปวดกล้ามเนื้อ";
