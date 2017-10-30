@@ -92,18 +92,18 @@
 				
 			}
 			else if (strpos( $textUser,"เมื่อย") ||  $event['message']['text'] == "เมื่อย"||
-				 strpos( $textUser,"ปวดแขน") ||  $event['message']['text'] != "ปวดแขน"||
-				 strpos( $textUser,"ปวดขา") ||  $event['message']['text'] != "ปวดขา"||
-				 strpos( $textUser,"ปวดเข่า") ||  $event['message']['text'] != "ปวดเข่า"||
-				 strpos( $textUser,"ปวดไหล่") ||  $event['message']['text'] != "ปวดไหล่"||
-				 strpos( $textUser,"ปวดหลัง") ||  $event['message']['text'] != "ปวดหลัง"||
-				 strpos( $textUser,"ปวดตัว") ||  $event['message']['text'] != "ปวดตัว"||
-				 strpos( $textUser,"ปวดต้นขา") ||  $event['message']['text'] != "ปวดต้นขา"||
-				strpos( $textUser,"ปวดข้อเท้า") ||  $event['message']['text'] != "ปวดข้อเท้า"||
-				strpos( $textUser,"ปวดข้อมือ") ||  $event['message']['text'] != "ปวดข้อมือ"||
-				strpos( $textUser,"ปวดเอว") ||  $event['message']['text'] != "ปวดเอว"||
-				strpos( $textUser,"ปวดน่อง") ||  $event['message']['text'] != "ปวดน่อง"||
-				strpos( $textUser,"เคล็ดขัดยอก") ||  $event['message']['text'] != "เคล็ดขัดยอก") { 
+				 strpos( $textUser,"ปวดแขน") ||  $event['message']['text'] == "ปวดแขน"||
+				 strpos( $textUser,"ปวดขา") ||  $event['message']['text'] == "ปวดขา"||
+				 strpos( $textUser,"ปวดเข่า") ||  $event['message']['text'] == "ปวดเข่า"||
+				 strpos( $textUser,"ปวดไหล่") ||  $event['message']['text'] == "ปวดไหล่"||
+				 strpos( $textUser,"ปวดหลัง") ||  $event['message']['text'] == "ปวดหลัง"||
+				 strpos( $textUser,"ปวดตัว") ||  $event['message']['text'] == "ปวดตัว"||
+				 strpos( $textUser,"ปวดต้นขา") ||  $event['message']['text'] == "ปวดต้นขา"||
+				strpos( $textUser,"ปวดข้อเท้า") ||  $event['message']['text'] == "ปวดข้อเท้า"||
+				strpos( $textUser,"ปวดข้อมือ") ||  $event['message']['text'] == "ปวดข้อมือ"||
+				strpos( $textUser,"ปวดเอว") ||  $event['message']['text'] == "ปวดเอว"||
+				strpos( $textUser,"ปวดน่อง") ||  $event['message']['text'] == "ปวดน่อง"||
+				strpos( $textUser,"เคล็ดขัดยอก") ||  $event['message']['text'] == "เคล็ดขัดยอก") { 
 
 				$text = "\tกรณีที่ปวดเมื่อยกล้ามเนื้อจากการทำกิจกรรมในชีวิตประจำวัน ที่เป็นอาการปวดเมื่อยเบื้องต้น หมอแนะนำให้ใช้แผ่นแปะบรรเทาปวด หรือใช้ยาแก้ปวดเมื่อยชนิดนวด\n*กรณีอยากเห็นรูปตัวอย่างยาให้พิมพ์คำว่า plaster หรือ ยาแก้ปวดกล้ามเนื้อ  \n**อยากทราบวิธีดูแลอาการปวดเมื่อย พิมพ์  ปวดTC\n***อยากทราบ ความแตกต่างของยาแก้ปวดเมื่อยชนิดนวด แบบร้อน และ แบบเย็น  พิมพ์  แตกต่างยาแก้ปวดกล้ามเนื้อ";
 				
