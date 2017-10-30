@@ -130,29 +130,7 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);	
 			}
-			else if (strpos( $textUser,"ผื่นสีแดง") ||  $event['message']['text'] == "ผื่นสีแดง" || strpos( $textUser,"ปวดร้อนที่ผิว") ||  $event['message']['text'] == "ปวดร้อนที่ผิว"||strpos( $textUser,"ตุ่มน้ำ") ||  $event['message']['text'] == "ตุ่มน้ำ"  ) {
-				// Get text sent
-
-				$text = "หากมีอาการปวดหัวและมีไข้ รู้สึกปวดแสบปวดร้อนบริเวณผิวหนัง จากนั้นประมาณ 1 สัปดาห์ บริเวณที่ปวดจะมีผื่นสีแดงขึ้น ก่อนจะกลายเป็นตุ่มน้ำในเวลารวดเร็ว โดยตุ่มน้ำอาจเกิดขึ้นในลักษณะเป็นกลุ่ม และเรียงเป็นเส้นยาว \nหมอขอสันนิษฐานเบื้องต้นเลยว่าเราป่วยเป็น งูสวัด\n**เช็คภาพอาการได้ โดยพิมพ์ว่า งูสวัด \n**เช็คการรักษาของโรคได้ โดยพิมพ์ว่า งูสวัดTC"";
-				
-				// Get replyToken
-				$replyToken = $event['replyToken'];
-				
-				// Build message to reply back
-				$messages = [
-					'type' => 'text',
-					'text' => $text
-				];
-				// Make a POST Request to Messaging API to reply to sender
-				$url = 'https://api.line.me/v2/bot/message/reply';
-				$data = [
-					'replyToken' => $replyToken,
-					'messages' => [$messages],
-				];
-				$post = json_encode($data);
-				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-				$ch = curl_init($url);	
-			}
+			
 				//$ch = curl_init($url);
 				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
