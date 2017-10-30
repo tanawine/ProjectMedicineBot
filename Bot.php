@@ -151,12 +151,42 @@
 				$ch = curl_init($url);	
 			}
 // ป่วย ไม่ป่วย
-			else if (strpos( $textUser,"ป่วย") ||  $event['message']['text'] != "ป่วย"
-				|| strpos( $textUser,"ไม่สบาย") ||  $event['message']['text'] != "ไม่สบาย" 
-				|| strpos( $textUser,"ไม่ok") ||  $event['message']['text'] == "ไม่ok"
-				||strpos( $textUser,"ไม่โอเค") ||  $event['message']['text'] == "ไม่โอเค"
-				||strpos( $textUser,"ไม่ค่อยสบาย") ||  $event['message']['text'] != "ไม่ค่อยสบาย"
-				||strpos( $textUser,"ไม่ค่อยดี") ||  $event['message']['text'] != "ไม่ค่อยดี") { 
+			else if ((strpos( $textUser,"ป่วย")  
+				|| strpos( $textUser,"ไม่สบาย")
+				|| strpos( $textUser,"ไม่ok")  
+				||strpos( $textUser,"ไม่โอเค") 
+				||strpos( $textUser,"ไม่ค่อยสบาย")
+				||strpos( $textUser,"ไม่ค่อยดี")) && ( $event['message']['text'] != "ไม่ค่อยดี" && $event['message']['text'] != "ป่วย" && $event['message']['text'] != "ไม่สบาย"  
+								     && $event['message']['text'] != "ไม่ok"
+								    &&  $event['message']['text'] != "ไม่โอเค" 
+								    && $event['message']['text'] != "ไม่ค่อยสบาย")) { 
+
+				$text = "เป็นอะไรไหนบอกหมอได้นะครับ บอกทีละอาการจะได้ให้คำแนะนำได้ง่ายๆ จาก CODE ";
+				
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+				
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages],
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
+			 }
+			else if (strpos( $textUser,"ผื่น") ||  $event['message']['text'] == "ผื่น"
+				|| strpos( $textUser,"คัน") ||  $event['message']['text'] == "คัน" 
+				|| strpos( $textUser,"ตุ่มน้ำ") ||  $event['message']['text'] == "ตุ่มน้ำ"
+				||strpos( $textUser,"ตุ่มแดง") ||  $event['message']['text'] == "ตุ่มแดง "
+				||strpos( $textUser,"จุดแดง") ||  $event['message']['text'] != "จุดแดง"
+				||strpos( $textUser,"ตุ่มใส") ||  $event['message']['text'] != "ตุ่มใส") { 
 
 				$text = "เป็นอะไรไหนบอกหมอได้นะครับ บอกทีละอาการจะได้ให้คำแนะนำได้ง่ายๆ ";
 				
@@ -191,5 +221,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK555";
-	//echo "OK9997";
+	//echo "OK555";
+	echo "OK9997";
