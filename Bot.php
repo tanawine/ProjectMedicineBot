@@ -131,7 +131,7 @@
 				$ch = curl_init($url);	
 			}
 // ป่วย ไม่ปวย
-			else if (strpos( $textUser,"ป่วย") ||  $event['message']['text'] == "ป่วย") { 
+			else if (strpos( $textUser,"ป่วย") ||  $event['message']['text'] != "ป่วย") { 
 
 				$text = "เป็นอะไรไหนบอกหมอได้นะครับ บอกทีละอาการจะได้ให้คำแนะนำได้ง่ายๆ ";
 				
@@ -166,5 +166,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK545";
+	echo "OK555";
 	//echo "OK9997";
