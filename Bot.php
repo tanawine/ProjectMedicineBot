@@ -328,6 +328,19 @@
  				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
  				$ch = curl_init($url);
  			 }
+// Test By ธนนวินท์     
+			else if ($event['message']['text'] != "ดอกอุ้ม") {
+				 "message": {"id": "325708","type": "sticker","packageId": "1","stickerId": "1"}
+				$replyToken = $event['replyToken'];
+				$url = 'https://api.line.me/v2/bot/message/reply';
+ 				$data = [
+ 					'replyToken' => $replyToken,
+ 					'messages' => [$messages],
+ 				];
+ 				$post = json_encode($data);
+ 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+ 				$ch = curl_init($url);
+			}
 			
 			
 			
@@ -342,5 +355,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK5575";
+	echo "OK555";
 	//echo "OK9999";
