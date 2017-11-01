@@ -16,13 +16,10 @@
 		      || strpos( $textUser,"หวัดดี")
 		      || strpos( $textUser,"ดีครับ")
 		      || strpos( $textUser,"ดีค่ะ"))
-					&& ( $event['message']['text'] != "สวัสดี" 
-				        && $event['message']['text'] != "หวัดดี" 
-					&& $event['message']['text'] != "ดีครับ"
-		    			&& $event['message']['text'] != "ดีค่ะ")){ 
+		&& ( $event['message']['text'] != "สวัสดี" && $event['message']['text'] != "หวัดดี" && $event['message']['text'] != "ดีครับ"
+		   && $event['message']['text'] != "ดีค่ะ")){ 
 				// Get text sent
-
-				$text = "วันนี้สบายดีไหมครับ ";
+				$text = "วันนี้สบายดีไหมครับ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -49,8 +46,7 @@
 				 || strpos( $textUser,"ไม่เป็นอะไร") ||  $event['message']['text'] == "ไม่เป็นอะไร"
 				 ||strpos( $textUser,"ไม่เป็นไร") ||  $event['message']['text'] == "ไม่เป็นไร") { 
 				// Get text sent
-
-				$text = "ดีแล้วครับ ดูแลตัวเองอย่าให้ป่วยนะครับ";
+				$text = "ดีแล้วครับ ดูแลตัวเองอย่าให้ป่วยนะครับ ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -77,8 +73,7 @@
 				 || strpos( $textUser,"ไอครับ") ||  $event['message']['text'] == "ไอครับ"
 				 ||strpos( $textUser,"เจ็บคอ") ||  $event['message']['text'] == "เจ็บคอ") {
 				// Get text sent
-
-				$text = "\t\tถ้ามีอาการไอแบบมีเสมหะ หมอแนะนำว่า ให้ใช้ตัวยาที่มีส่วนประกอบของ Guaifenesin ซึ่งช่วยบรรเทาอาการไอชนิดมีเสมหะ\tโดยยาที่หาซื้อได้ทั่วไปคือ Bromhexine หรือ Bisolvon \n***กรณี อยากเห็นภาพตัวอย่างยา พิมพ์คำว่า \"Bromhexine\" หรือ \"Bisolvon\" \n กรณี มีอาการไอแบบไม่มีเสมหะ พิมพ์คำว่า \"ไอแบบไม่มีเสมหะ\" ";
+				$text = "\t\tถ้ามีอาการไอแบบมีเสมหะ หมอแนะนำว่า ให้ใช้ตัวยาที่มีส่วนประกอบของ Guaifenesin ซึ่งช่วยบรรเทาอาการไอชนิดมีเสมหะ\tโดยยาที่หาซื้อได้ทั่วไปคือ Bromhexine หรือ Bisolvon \n***กรณี อยากเห็นภาพตัวอย่างยา พิมพ์คำว่า \"Bromhexine\" หรือ \"Bisolvon\" \n\n กรณี มีอาการไอแบบไม่มีเสมหะ พิมพ์คำว่า \"ไอแบบไม่มีเสมหะ\"  ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -114,7 +109,6 @@
 				strpos( $textUser,"ปวดเอว") ||  $event['message']['text'] == "ปวดเอว"||
 				strpos( $textUser,"ปวดน่อง") ||  $event['message']['text'] == "ปวดน่อง"||
 				strpos( $textUser,"เคล็ดขัดยอก") ||  $event['message']['text'] == "เคล็ดขัดยอก") { 
-
 				$text = "กรณีที่ปวดเมื่อยกล้ามเนื้อจากการทำกิจกรรมในชีวิตประจำวัน ที่เป็นอาการปวดเมื่อยเบื้องต้น หมอแนะนำให้ใช้แผ่นแปะบรรเทาปวด หรือใช้ยาแก้ปวดเมื่อยชนิดนวด\n\n*กรณีอยากเห็นรูปตัวอย่างยาให้พิมพ์คำว่า \"plaster\" หรือ \"ยาแก้ปวดกล้ามเนื้อ\"  \n**อยากทราบวิธีดูแลอาการปวดเมื่อย พิมพ์  \"ปวดTC\" \n***อยากทราบ ความแตกต่างของยาแก้ปวดเมื่อยชนิดนวด แบบร้อน และ แบบเย็น พิมพ์ \"แตกต่างยาแก้ปวดกล้ามเนื้อ\" ";
 				
 				// Get replyToken
@@ -140,7 +134,6 @@
 				 strpos( $textUser,"มีไข้") ||  $event['message']['text'] == "มีไข้"||
 				strpos( $textUser,"ตัวร้อน") ||  $event['message']['text'] == "ตัวร้อน" ) {
 				// Get text sent
-
 				$text = "อาการของคนมีไข้ คือ อุณหภูมิกายเพิ่มสูงกว่าปกติ คือ 36 หรือ 37.2 องศา หากวัดจากทางปาก เวลาที่มีไข้ไม่จำเป็นว่าทุกส่วนของร่างกายจะต้องร้อนเท่ากันหมดนะครับ อาจร้อนที่ศีรษะ ลำตัว และแขนขา แต่ฝ่ามือฝ่าเท้ายังเย็นเป็นปกติก็ได้นะครับ โดยยาที่ใช้ลดไข้คือ Paracetamol โดยไข้หวัดธรรมดาจะมีอาการ 3-5 วัน ถ้ามีอาการมากกว่านี้แนะนำให้พบแพทย์นะครับ \n*กรณีอยากเห็นรูปตัวอย่างยาให้พิมพ์คำว่า \"paracetamol\" \n**กรณีอยากทราบวิธีดูตัวเองพิมพ์ \"ไข้TC\" ";
 				
 				// Get replyToken
@@ -172,8 +165,7 @@
 								     && $event['message']['text'] != "ไม่ok"
 								    &&  $event['message']['text'] != "ไม่โอเค" 
 								    && $event['message']['text'] != "ไม่ค่อยสบาย")) { 
-
-				$text = "เป็นอะไรไหนบอกหมอได้นะครับ บอกทีละอาการจะได้ให้คำแนะนำได้ง่ายๆ จาก CODE";
+				$text = "เป็นอะไรไหนบอกหมอได้นะครับ บอกทีละอาการจะได้ให้คำแนะนำได้ง่ายๆ จาก CODE ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -206,8 +198,7 @@
 								    && $event['message']['text'] != "จุดแดง"
 								   && $event['message']['text'] != "ตุ่มใส")
 									&& $event['message']['text'] != "ผื่นคัน")) { 
-
-				$text = "หากคนไข้มีอาการผื่นคัน ผื่นแดง หรือตุ่มใส บริเวณผิวหนัง หรือร่างกายที่เกิดจากการแพ้ ให้พิมพ์คำว่า \"ผื่นคัน\" นะครับ";
+				$text = "หากคนไข้มีอาการผื่นคัน ผื่นแดง หรือตุ่มใส บริเวณผิวหนัง หรือร่างกายที่เกิดจากการแพ้ ให้พิมพ์คำว่า \"ผื่นคัน\" นะครับ ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -228,9 +219,39 @@
 				$ch = curl_init($url);
 			 }
 //ท้องเสีย 
-		
+		else if ((strpos( $textUser,"ถ่ายบ่อย")  
+				|| strpos( $textUser,"ถ่ายเป็นน้ำ")
+				|| strpos( $textUser,"ท้องเสีย")  
+				||strpos( $textUser,"ถ่ายเหลว") 
+				||strpos( $textUser,"อุจจาระเหลว")
+				||strpos( $textUser,"อุจจาระเป็นน้ำ")) && ( $event['message']['text'] != "ถ่ายบ่อย" 
+								      && $event['message']['text'] != "ถ่ายเป็นน้ำ"  
+								     && $event['message']['text'] != "ท้องเสีย"
+								    &&  $event['message']['text'] != "ถ่ายเหลว" 
+								    && $event['message']['text'] != "อุจจาระเหลว"
+								   && $event['message']['text'] != "อุจจาระเป็นน้ำ")) { 
+				$text = "ถ้าคนไข้มีอาการถ่ายอุจจาระเหลว ถ่ายเป็นน้ำมากกว่า 3 ครั้งขึ้นไป หรือถ่ายเป็นมูกปนเลือด 1 ครั้งหรือมากกว่านั้นภายใน 24 ชั่วโมง 
+				\nโดยยาที่ใช้รักษาอาการท้องเสีย หมอขอแนะนำ เป็นการดื่มน้ำหรือดื่มน้ำเกลือแร่ซึ่งเป็นยาผงละลายน้ำที่ทั่วไปเรียกว่า ยาโออาร์เอส *ดูภาพตัวอย่างยาพิมพ์ \"ยาORS\" ";
+				
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+				
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages],
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
+			 }	
 			
-
 			
 				//$ch = curl_init($url);
 				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
