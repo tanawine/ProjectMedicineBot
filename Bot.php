@@ -19,7 +19,7 @@
 		&& ( $event['message']['text'] != "สวัสดี" && $event['message']['text'] != "หวัดดี" && $event['message']['text'] != "ดีครับ"
 		   && $event['message']['text'] != "ดีค่ะ")){ 
 				// Get text sent
-				$text = "วันนี้สบายดีไหมครับ";
+				$text = "\"วันนี้สบายดีไหมครับ\" ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -231,5 +231,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK555";
-	//echo "OK9997";
+	//echo "OK555";
+	echo "OK9997";
