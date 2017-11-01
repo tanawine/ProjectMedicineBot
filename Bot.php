@@ -20,7 +20,7 @@
 		   && $event['message']['text'] != "ดีค่ะ")){ 
 				// Get text sent
 
-				$text = "วันนี้สบายดีไหมครับ\.";
+				$text = "วันนี้สบายดีไหมครับ ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
