@@ -41,10 +41,13 @@
 			
 			}
 //ไม่ป่วย
-			else if (strpos( $textUser,"ไม่ป่วย") ||  $event['message']['text'] == "ไม่ป่วย" 
-				 || strpos( $textUser,"สบายดี") ||  $event['message']['text'] == "สบายดี" 
-				 || strpos( $textUser,"ไม่เป็นอะไร") ||  $event['message']['text'] == "ไม่เป็นอะไร"
-				 ||strpos( $textUser,"ไม่เป็นไร") ||  $event['message']['text'] == "ไม่เป็นไร") { 
+			else if (  ( strpos( $textUser,"ไม่ป่วย")
+				 ||strpos( $textUser,"สบายดี")
+				 ||strpos( $textUser,"ไม่เป็นอะไร")
+				 ||strpos( $textUser,"ไม่เป็นไร") ) && ( $event['message']['text'] != "สบายดี"
+								       && $event['message']['text'] == "ไม่ป่วย"
+								       && $event['message']['text'] == "ไม่เป็นอะไร"
+								       && $event['message']['text'] == "ไม่เป็นไร" )){
 				// Get text sent
 				$text = "ดีแล้วครับ ดูแลตัวเองอย่าให้ป่วยนะครับ . ";
 				
@@ -339,5 +342,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK555";
+	echo "OK5575";
 	//echo "OK9999";
