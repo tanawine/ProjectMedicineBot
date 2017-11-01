@@ -293,8 +293,8 @@
  				$ch = curl_init($url);
  			 } 
  // ผื่นไข้ งูสวัส
-			else if ( ((strpos( $textUser,"ผื่น")&&(strpos( $textUser,"ไข้"))
-				 && ( $event['message']['text'] != "ผื่นคัน" )){
+			else if ( ( strpos( $textUser,"ผื่น") && strpos( $textUser,"ไข้") )
+				 && ( $event['message']['text'] != "ผื่นคัน" )    ){
 								   //&& $event['message']['text'] != "จุกเสียด" 
  								  // && $event['message']['text'] != "อึดอัดท้อง"  
  								   //&& $event['message']['text'] != "มีลมในกระเพาะอาหาร"
