@@ -45,9 +45,9 @@
 				 ||strpos( $textUser,"สบายดี")
 				 ||strpos( $textUser,"ไม่เป็นอะไร")
 				 ||strpos( $textUser,"ไม่เป็นไร") ) && ( $event['message']['text'] != "สบายดี"
-								       && $event['message']['text'] == "ไม่ป่วย"
-								       && $event['message']['text'] == "ไม่เป็นอะไร"
-								       && $event['message']['text'] == "ไม่เป็นไร" )){
+								       && $event['message']['text'] != "ไม่ป่วย"
+								       && $event['message']['text'] != "ไม่เป็นอะไร"
+								       && $event['message']['text'] != "ไม่เป็นไร" )){
 				// Get text sent
 				$text = "ดีแล้วครับ ดูแลตัวเองอย่าให้ป่วยนะครับ . ";
 				
