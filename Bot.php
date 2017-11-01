@@ -217,6 +217,40 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 			 }
+//ท้องเสีย
+			else if ((strpos( $textUser,"ถ่ายบ่อย")  
+				|| strpos( $textUser,"ถ่ายเป็นน้ำ")
+				|| strpos( $textUser,"ท้องเสีย")  
+				||strpos( $textUser,"ถ่ายเหลว") 
+				||strpos( $textUser,"อุจจาระเหลว")
+				||strpos( $textUser,"อุจจาระเป็นน้ำ")) && ( $event['message']['text'] != "ถ่ายบ่อย" 
+								      && $event['message']['text'] != "ถ่ายเป็นน้ำ"  
+								     && $event['message']['text'] != "ท้องเสีย"
+								    &&  $event['message']['text'] != "ถ่ายเหลว" 
+								    && $event['message']['text'] != "อุจจาระเหลว"
+								   && $event['message']['text'] != "อุจจาระเป็นน้ำ")) { 
+
+				$text = "ถ้าคนไข้มีอาการถ่ายอุจจาระเหลว ถ่ายเป็นน้ำมากกว่า 3 ครั้งขึ้นไป หรือถ่ายเป็นมูกปนเลือด 1 ครั้งหรือมากกว่านั้นภายใน 24 ชั่วโมง โดยยาที่ใช้รักษาอาการท้องเสีย หมอขอแนะนำ เป็นการดื่มน้ำหรือดื่มน้ำเกลือแร่ซึ่งเป็นยาผงละลายน้ำที่ทั่วไปเรียกว่า ยาORS  \n*ดูภาพตัวอย่างยาพิมพ์ \"ยาORS\"\n**ถ้าผู้ป่วยยังมีอาการอาเจียนมาก เหงื่อออกมาก ตัวเย็น ความรู้สึกเปลี่ยนแปลงไป หรือหมดสติ ควรนำผู้ป่วยส่งโรงพยาบาลโดยด่วนนะครับ . ";
+				
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+				
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages],
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
+			 }	
+
 			
 			
 			
@@ -231,5 +265,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK555";
-	//echo "OK9997";
+	//echo "OK555";
+	echo "OK9997";
