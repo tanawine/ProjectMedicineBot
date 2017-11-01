@@ -253,9 +253,9 @@
 // แน่นท้อง อึดอัดท้อง มีลมในกระเพาะ
 			else if ((strpos( $textUser,"แน่นท้อง")
 				||strpos( $textUser,"จุกเสียด")  
- 				|| strpos( $textUser,"อึดอัดท้อง") 
-				|| strpos( $textUser,"ตดบ่อย")
- 				|| strpos( $textUser,"มีลมในกระเพาะอาหาร")  
+ 				||strpos( $textUser,"อึดอัดท้อง") 
+				||strpos( $textUser,"ตดบ่อย")
+ 				||strpos( $textUser,"มีลมในกระเพาะอาหาร")  
 				||strpos( $textUser,"กรดในกระเพาะ")
  				||strpos( $textUser,"ท้องอืด") 
  				||strpos( $textUser,"เรอ")
@@ -267,7 +267,7 @@
  								   && $event['message']['text'] != "ท้องอืด" 
  								   && $event['message']['text'] != "เรอ"  
 								   && $event['message']['text'] != "กรดในกระเพาะ"
- 								   && $event['message']['text'] != "ท้องเฟ้อ")
+ 								   && $event['message']['text'] != "ท้องเฟ้อ"
 				 				   && $event['message']['text'] != "ตดบ่อย"
  				 				   && $event['message']['text'] != "ผายลมบ่อย")) { 
   
