@@ -330,8 +330,12 @@
  			 }
 // Test By ธนนวินท์     
 			else if ($event['message']['text'] != "ดอกอุ้ม") {
-				 $message = ['type'=> 'sticker','packageId'=> "1",'stickerId': "1"];
+				 $text = "\uDBC0\uDC84 LINE emoji";
 				$replyToken = $event['replyToken'];
+				$messages = [
+ 					'type' => 'text',
+ 					'text' => $text
+ 				];
 				$url = 'https://api.line.me/v2/bot/message/reply';
  				$data = [
  					'replyToken' => $replyToken,
