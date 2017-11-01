@@ -131,7 +131,7 @@
 			 }
 //ไข้
 			else if ( (strpos( $textUser,"ไข้")&& !strpos($textUser,"ผื่น")) ||  $event['message']['text'] == "ไข้" || 
-				 strpos( $textUser,"มีไข้") ||  $event['message']['text'] == "มีไข้"||
+				 ( strpos( $textUser,"มีไข้")&& !strpos($textUser,"ผื่น")) ||  $event['message']['text'] == "มีไข้"||
 				strpos( $textUser,"ตัวร้อน") ||  $event['message']['text'] == "ตัวร้อน" ) {
 				// Get text sent
 				$text = "อาการของคนมีไข้ คือ อุณหภูมิกายเพิ่มสูงกว่าปกติ คือ 36 หรือ 37.2 องศา หากวัดจากทางปาก เวลาที่มีไข้ไม่จำเป็นว่าทุกส่วนของร่างกายจะต้องร้อนเท่ากันหมดนะครับ อาจร้อนที่ศีรษะ ลำตัว และแขนขา แต่ฝ่ามือฝ่าเท้ายังเย็นเป็นปกติก็ได้นะครับ โดยยาที่ใช้ลดไข้คือ Paracetamol โดยไข้หวัดธรรมดาจะมีอาการ 3-5 วัน ถ้ามีอาการมากกว่านี้แนะนำให้พบแพทย์นะครับ \n*กรณีอยากเห็นรูปตัวอย่างยาให้พิมพ์คำว่า \"paracetamol\" \n**กรณีอยากทราบวิธีดูตัวเองพิมพ์ \"ไข้TC\" . ";
@@ -187,7 +187,7 @@
 			 }
 // โรคผื่นคัน ผื่นไข้			
 			else if ((strpos( $textUser,"คัน")  
-				|| strpos( $textUser,"ผื่น")
+				|| (strpos( $textUser,"ผื่น")&& !strpos($textUser,"ไข้"))
 				|| strpos( $textUser,"ตุ่มน้ำ")  
 				||strpos( $textUser,"ตุ่มแดง") 
 				||strpos( $textUser,"จุดแดง")
@@ -339,5 +339,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK5558";
+	echo "OK555";
 	//echo "OK9999";
