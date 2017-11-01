@@ -329,22 +329,22 @@
  				$ch = curl_init($url);
  			 }
 // Test By ธนนวินท์     
-			else if ($event['message']['text'] != "ดอกอุ้ม") {
-				 $text = "\uDBC0\uDC84 LINE emoji";
-				$replyToken = $event['replyToken'];
-				$messages = [
- 					'type' => 'text',
- 					'text' => $text
- 				];
-				$url = 'https://api.line.me/v2/bot/message/reply';
- 				$data = [
- 					'replyToken' => $replyToken,
- 					'messages' => [$messages],
- 				];
- 				$post = json_encode($data);
- 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
- 				$ch = curl_init($url);
-			}
+			//else if ($event['message']['text'] != "ดอกอุ้ม") {
+			//	 $text = "\uDBC0\uDC84 LINE emoji";
+			//	$replyToken = $event['replyToken'];
+			//	$messages = [
+ 			//		'type' => 'text',
+ 			//		'text' => $text
+ 			//	];
+			//	$url = 'https://api.line.me/v2/bot/message/reply';
+ 			//	$data = [
+ 			//		'replyToken' => $replyToken,
+ 			//		'messages' => [$messages],
+ 			//	];
+ 			//	$post = json_encode($data);
+ 			//	$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+ 			//	$ch = curl_init($url);
+			//}
 			
 			
 			
@@ -359,5 +359,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK555";
-	//echo "OK9999";
+	//echo "OK555";
+	echo "OK9999";
