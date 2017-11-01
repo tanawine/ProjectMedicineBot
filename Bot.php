@@ -11,7 +11,7 @@
 		foreach ($events['events'] as $event) {
 			// Reply only when message sent is in 'text' format
 			 $textUser = $event['message']['text'];
-			 //$text1 = "ไร";
+//ทักทาย	
 		 if (( strpos( $textUser,"สวัสดี") 
 		      || strpos( $textUser,"หวัดดี")
 		      || strpos( $textUser,"ดีครับ")
@@ -41,6 +41,7 @@
 				$ch = curl_init($url);
 			
 			}
+//ไม่ป่วย
 			else if (strpos( $textUser,"ไม่ป่วย") ||  $event['message']['text'] == "ไม่ป่วย" 
 				 || strpos( $textUser,"สบายดี") ||  $event['message']['text'] == "สบายดี" 
 				 || strpos( $textUser,"ไม่เป็นอะไร") ||  $event['message']['text'] == "ไม่เป็นอะไร"
@@ -67,6 +68,7 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 			 }
+//ไอ
 			else if (strpos( $textUser,"ไอ") ||  $event['message']['text'] == "ไอ" 
 				 || strpos( $textUser,"ไอเจ็บคอ") ||  $event['message']['text'] == "ไอเจ็บคอ" 
 				 || strpos( $textUser,"ไอค่ะ") ||  $event['message']['text'] == "ไอค่ะ" 
@@ -96,6 +98,7 @@
 				
 				
 			}
+//ปวดเมื่อยกล้ามเนื้อ
 			else if (strpos( $textUser,"เมื่อย") ||  $event['message']['text'] == "เมื่อย"||
 				 strpos( $textUser,"ปวดแขน") ||  $event['message']['text'] == "ปวดแขน"||
 				 strpos( $textUser,"ปวดขา") ||  $event['message']['text'] == "ปวดขา"||
@@ -130,6 +133,7 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 			 }
+//ไข้
 			else if (strpos( $textUser,"ไข้") ||  $event['message']['text'] == "ไข้" || 
 				 strpos( $textUser,"มีไข้") ||  $event['message']['text'] == "มีไข้"||
 				strpos( $textUser,"ตัวร้อน") ||  $event['message']['text'] == "ตัวร้อน" ) {
@@ -155,7 +159,7 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);	
 			}
-// ป่วย ไม่ป่วย
+// ป่วย 
 			else if ((strpos( $textUser,"ป่วย")  
 				|| strpos( $textUser,"ไม่สบาย")
 				|| strpos( $textUser,"ไม่ok")  
@@ -167,7 +171,7 @@
 								    &&  $event['message']['text'] != "ไม่โอเค" 
 								    && $event['message']['text'] != "ไม่ค่อยสบาย")) { 
 
-				$text = "เป็นอะไรไหนบอกหมอได้นะครับ บอกทีละอาการจะได้ให้คำแนะนำได้ง่ายๆ จาก CODE ";
+				$text = "เป็นอะไรไหนบอกหมอได้นะครับ บอกทีละอาการจะได้ให้คำแนะนำได้ง่ายๆ จาก \" CODE ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -187,6 +191,7 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 			 }
+// โรคผื่นคัน ผื่นไข้			
 			else if ((strpos( $textUser,"คัน")  
 				|| strpos( $textUser,"ผื่น")
 				|| strpos( $textUser,"ตุ่มน้ำ")  
@@ -199,7 +204,7 @@
 								    && $event['message']['text'] != "จุดแดง"
 								   && $event['message']['text'] != "ตุ่มใส")) { 
 
-				$text = "-หากท่านมีอาการผื่นคัน ผื่นแดง หรือตุ่มใส บริเวณผิวหนัง หรือร่างกายที่เกิดจากการแพ้ ให้พิมพ์คำว่า “ผื่นคัน” ";
+				$text = "หากคนไข้มีอาการผื่นคัน ผื่นแดง หรือตุ่มใส บริเวณผิวหนัง หรือร่างกายที่เกิดจากการแพ้ ให้พิมพ์คำว่า “ผื่นคัน” นะครับ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -234,5 +239,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK555";
-	//echo "OK9997";
+	//echo "OK555";
+	echo "OK9997";
