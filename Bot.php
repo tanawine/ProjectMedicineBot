@@ -130,7 +130,7 @@
 				$ch = curl_init($url);
 			 }
 //ไข้
-			else if (strpos( $textUser,"ไข้") ||  $event['message']['text'] == "ไข้" || 
+			else if ( (strpos( $textUser,"ไข้")&& !strpos($textUser,"ผื่น")) ||  $event['message']['text'] == "ไข้" || 
 				 strpos( $textUser,"มีไข้") ||  $event['message']['text'] == "มีไข้"||
 				strpos( $textUser,"ตัวร้อน") ||  $event['message']['text'] == "ตัวร้อน" ) {
 				// Get text sent
@@ -339,5 +339,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK555";
+	echo "OK5558";
 	//echo "OK9999";
