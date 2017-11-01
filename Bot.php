@@ -291,8 +291,40 @@
  				$post = json_encode($data);
  				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
  				$ch = curl_init($url);
+ 			 } 
+ // ผื่นไข้ งูสวัส
+			else if ( ((strpos( $textUser,"ผื่น")&&(strpos( $textUser,"ไข้"))
+				 && ( $event['message']['text'] != "ผื่นคัน" )){
+								   //&& $event['message']['text'] != "จุกเสียด" 
+ 								  // && $event['message']['text'] != "อึดอัดท้อง"  
+ 								   //&& $event['message']['text'] != "มีลมในกระเพาะอาหาร"
+ 								   //&& $event['message']['text'] != "ท้องอืด" 
+ 								   //&& $event['message']['text'] != "เรอ"  
+								   //&& $event['message']['text'] != "กรดในกระเพาะ"
+ 								   //&& $event['message']['text'] != "ท้องเฟ้อ"
+				 				   //&& $event['message']['text'] != "ตดบ่อย"
+ 				 				   //&& $event['message']['text'] != "ผายลมบ่อย")) { 
+  
+ 				$text = "\t\tหากคนไข้เป็นผื่นแดง โดยผื่นขึ้นตามแนวเส้นประสาท ประกอบกับการมีไข้ และรู้สึกปวดแสบปวดร้อบปริเวณผื่นแดง แสดงว่าคนไข้เป็นโรคงูสวัส \n*กรณีโรคงูสวัสพิมพ์ \" งูสวัส \" \n\t\tถ้าหากคนไข้มีตุ่มใส ประกอบกับการเป็นไข้แสดงว่าคนไข้เป็นเริม \n*กรณีเริมพิมพ์ \" เริม \" . ";
+ 				
+ 				// Get replyToken
+ 				$replyToken = $event['replyToken'];
+ 				
+ 				// Build message to reply back
+ 				$messages = [
+ 					'type' => 'text',
+ 					'text' => $text
+ 				];
+ 				// Make a POST Request to Messaging API to reply to sender
+ 				$url = 'https://api.line.me/v2/bot/message/reply';
+ 				$data = [
+ 					'replyToken' => $replyToken,
+ 					'messages' => [$messages],
+ 				];
+ 				$post = json_encode($data);
+ 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+ 				$ch = curl_init($url);
  			 }
-			
 			
 			
 			
@@ -307,5 +339,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK555";
-	echo "OK9999";
+	echo "OK555";
+	//echo "OK9999";
