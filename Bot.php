@@ -251,40 +251,7 @@
 				$ch = curl_init($url);
 			 }	
 // แน่นท้อง อึดอัดท้อง มีลมในกระเพาะ
-			else if ((strpos( $textUser,"แน่นท้อง")||strpos( $textUser,"จุกเสียด")  
-				|| strpos( $textUser,"อึดอัดท้อง") || strpos( $textUser,"ตดบ่อย")
-				|| strpos( $textUser,"มีลมในกระเพาะอาหาร")  ||strpos( $textUser,"กรดในกระเพาะ")
-				||strpos( $textUser,"ท้องอืด") 
-				||strpos( $textUser,"เรอ")
-				||strpos( $textUser,"ท้องเฟ้อ")
-				||strpos( $textUser,"ผายลมบ่อย")) && ( $event['message']['text'] != "แน่นท้อง"  && $event['message']['text'] != "จุกเสียด" 
-								      && $event['message']['text'] != "อึดอัดท้อง"  
-								     && $event['message']['text'] != "มีลมในกระเพาะอาหาร"
-								    &&  $event['message']['text'] != "ท้องอืด" 
-								    && $event['message']['text'] != "เรอ"  && $event['message']['text'] != "กรดในกระเพาะ"
-								   && $event['message']['text'] != "ท้องเฟ้อ")&& $event['message']['text'] != "ตดบ่อย"
-				 				 && $event['message']['text'] != "ผายลมบ่อย")) { 
-
-				$text = "อาการท้องอืดมักจะรู้สึกไม่สบายท้อง รู้สึกแน่น และอาจมีอาการปวด และมีลมในกระเพาะอาหารเป็นจำนวนมาก จนทำให้เรอ หรือผายลมบ่อย อาจได้ยินเสียงโครกครากภายในท้อง และมีอาการปวดท้องร่วมด้วย โดยยาที่ใช้รักษาอาการท้องอืด หมอขอแนะนำ เป็นยาช่วยย่อยอาหาร ยาลดกรด \n\n*ดูภาพตัวอย่างยาพิมพ์ \"ยาลดกรด\" \n*กรณีอยากรู้เรื่องเกี่ยวกับการเปลี่ยนพฤติกรรมที่เสี่ยงต่ออาการท้องอืด พิมพ์ \"เปลี่ยนพฤติกรรม\" . ";
-				
-				// Get replyToken
-				$replyToken = $event['replyToken'];
-				
-				// Build message to reply back
-				$messages = [
-					'type' => 'text',
-					'text' => $text
-				];
-				// Make a POST Request to Messaging API to reply to sender
-				$url = 'https://api.line.me/v2/bot/message/reply';
-				$data = [
-					'replyToken' => $replyToken,
-					'messages' => [$messages],
-				];
-				$post = json_encode($data);
-				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-				$ch = curl_init($url);
-			 }
+			
 			
 			
 			
