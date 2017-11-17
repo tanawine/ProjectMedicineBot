@@ -333,7 +333,28 @@
  				$post = json_encode($data);
  				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
  				$ch = curl_init($url);
- 			 }
+ 			 } 
+// test
+			else if ( strpos( $textUser, "win") {
+ 				
+ 				// Get replyToken
+ 				$replyToken = $event['replyToken'];
+ 				
+ 				// Build message to reply back
+ 				$messages = [
+ 					'type' => 'image',"originalContentUrl": "https://s26.postimg.org/laiepkveh/385697-636167162089341239-16x9.jpg",
+ 					"previewImageUrl": "https://s26.postimg.org/laiepkveh/385697-636167162089341239-16x9.jpg"
+ 				];    
+ 				// Make a POST Request to Messaging API to reply to sender
+ 				$url = 'https://api.line.me/v2/bot/message/reply';
+ 				$data = [
+ 					'replyToken' => $replyToken,
+ 					'messages' => [$messages],
+ 				];
+ 				$post = json_encode($data);
+ 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+ 				$ch = curl_init($url);
+ 			 } 
 // Test By ธนนวินท์     
 			//else if ($event['message']['text'] != "ดอกอุ้ม") {
 			//	 $text = "\uDBC0\uDC84 LINE emoji";
@@ -366,4 +387,4 @@
 		}
 	}
 	echo "OK555";
-	echo "OK9999";
+	//echo "OK9999";
