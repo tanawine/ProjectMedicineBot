@@ -410,7 +410,90 @@
 				$ch = curl_init($url);
 				$z = 1;
 			 }		
-			else if ( $z=123 && $event['message']['text'] != "paracetamol") { 
+			else if ( $z=123 && $event['message']['text'] != "หวัดดี"&& $event['message']['text'] != "ดีค่ะ" 
+				 && $event['message']['text'] != "ดีครับ" && $event['message']['text'] != "สวัสดี"
+				 && $event['message']['text'] != "สวัสดีค่ะ"&& $event['message']['text'] != "สวัสดีครับ" 
+				 && $event['message']['text'] != "ดีคับ" && $event['message']['text'] != "Hi"
+				 && $event['message']['text'] != "hi"&& $event['message']['text'] != "Hello" 
+				 && $event['message']['text'] != "hello" && $event['message']['text'] != "สวัสดีค่ะหมอ"
+				 && $event['message']['text'] != "สวัสดีหมอ"&& $event['message']['text'] != "สวัสดีครับหมอ" 
+				 && $event['message']['text'] != "ดีครับพี่หมอ" && $event['message']['text'] != "ดีครับหมอ"
+				 && $event['message']['text'] != "หมอ"&& $event['message']['text'] != "ดีหมอ" 
+				 && $event['message']['text'] != "ไม่ป่วย" && $event['message']['text'] != "สบายดี"
+				 && $event['message']['text'] != "สบายดีจ้า"&& $event['message']['text'] != "สบายดีค่ะ" 
+				 && $event['message']['text'] != "สบายดีครับ" && $event['message']['text'] != "ไข้TC"
+				 && $event['message']['text'] != "ไข้tc"&& $event['message']['text'] != "Bisolvon" 
+				 
+				 && $event['message']['text'] != "bisolvon" && $event['message']['text'] != "Bromhexine"
+				 && $event['message']['text'] != "bromhexine"&& $event['message']['text'] != "Paracetamol" 
+				 && $event['message']['text'] != "paracetamol" && $event['message']['text'] != "พาราเซตามอล"
+				 && $event['message']['text'] != "ไอแบบไม่มีเสมหะ"&& $event['message']['text'] != "ไม่ค่อยสบาย" 
+				 && $event['message']['text'] != "ป่วยอ่ะ" && $event['message']['text'] != "ไม่สบาย"
+				 && $event['message']['text'] != "ไม่ค่อยดี"&& $event['message']['text'] != "ป่วย" 
+				
+				 && $event['message']['text'] != "ไม่สบายอะ" && $event['message']['text'] != "dextro"
+				 && $event['message']['text'] != "Dextro"&& $event['message']['text'] != "คู่มือการใช้งาน" 
+				 && $event['message']['text'] != "สาระออกกำลังกาย" && $event['message']['text'] != "อาหาร5หมู่"
+				 && $event['message']['text'] != "ให้คะแนน Medicine Bot"&& $event['message']['text'] != "vote" 
+				 && $event['message']['text'] != "vote app" && $event['message']['text'] != "Vote app"
+				 && $event['message']['text'] != "Vote"&& $event['message']['text'] != "โหวต" 
+				 
+				 && $event['message']['text'] != "โหวตคะแนนแอป" && $event['message']['text'] != "เคล็ดขัดยอกกล้ามเนื้อ"
+				 && $event['message']['text'] != "ปวดกล้ามเนื้อ"&& $event['message']['text'] != "ปวดกล้ามเนื้อทำยังไงดี" 
+				 && $event['message']['text'] != "ปวดTC" && $event['message']['text'] != "ปวดtc"
+				 && $event['message']['text'] != "แตกต่างยาแก้ปวดกล้ามเนื้อ"&& $event['message']['text'] != "plaster" 
+				 && $event['message']['text'] != "Plaster" && $event['message']['text'] != "ยาแก้ปวดกล้ามเนื้อ"
+				 && $event['message']['text'] != "งูสวัด"&& $event['message']['text'] != "งูสวัดTC" 
+				 
+				 && $event['message']['text'] != "งูสวัดtc" && $event['message']['text'] != "ผื่นคันTC"
+				 && $event['message']['text'] != "ผื่นคันtc"&& $event['message']['text'] != "คลอร์เฟนิรามีน" 
+				 && $event['message']['text'] != "chlorpheniramine" && $event['message']['text'] != "Chlorpheniramine"
+				 && $event['message']['text'] != "ท้องเสียTC"&& $event['message']['text'] != "ท้องเสียtc" 
+				 && $event['message']['text'] != "คัน" && $event['message']['text'] != "ผื่น"
+				 && $event['message']['text'] != "ตุ่มน้ำ"&& $event['message']['text'] != "ตุ่มแดง" 
+				 
+				  && $event['message']['text'] != "จุดแดง" && $event['message']['text'] != "ตุ่มใส"
+				  && $event['message']['text'] != "ผื่นคัน"&& $event['message']['text'] != "ยาORS" 
+				  && $event['message']['text'] != "ยาโออาร์เอส" && $event['message']['text'] != "ยาors"
+				  && $event['message']['text'] != "ORS"&& $event['message']['text'] != "ors" 
+				  && $event['message']['text'] != "EX1" && $event['message']['text'] != "ex1"
+				  && $event['message']['text'] != "EX2" && $event['message']['text'] != "ex2"
+				  && $event['message']['text'] != "ยาลดกรด" && $event['message']['text'] != "ยาลดกรด"
+				  && $event['message']['text'] != "เปลี่ยนพฤติกรรม" && $event['message']['text'] != "เปลี่ยนพฤติกรรม"
+				  && $event['message']['text'] != "EX3" && $event['message']['text'] != "ex3"
+				  && $event['message']['text'] != "ถ่ายบ่อย" && $event['message']['text'] != "ถ่ายเป็นน้ำ"
+				  && $event['message']['text'] != "ท้องเสีย" && $event['message']['text'] != "ถ่ายเหลว"
+				  && $event['message']['text'] != "อุจจาระเหลว" && $event['message']['text'] != "อุจจาระเป็นน้ำ"
+				  && $event['message']['text'] != "ถ่ายบ่อยอะหมอ" && $event['message']['text'] != "แน่นท้อง"
+				  && $event['message']['text'] != "จุกเสียด" && $event['message']['text'] != "อึดอัดท้อง"
+				  && $event['message']['text'] != "มีลมในท้อง" && $event['message']['text'] != "ตดบ่อย"
+				  && $event['message']['text'] != "มีลมในกระเพาะอาหาร" && $event['message']['text'] != "กรดในกระเพาะ"
+				  && $event['message']['text'] != "ท้องอืด" && $event['message']['text'] != "เรอ"
+				  && $event['message']['text'] != "ท้องเฟ้อ" && $event['message']['text'] != "ผายลมบ่อย"
+				  && $event['message']['text'] != "กรดไหลย้อน" && $event['message']['text'] != "ex1"
+				  && $event['message']['text'] != "EX4" && $event['message']['text'] != "ex4"
+				  && $event['message']['text'] != "EX5" && $event['message']['text'] != "ex5"
+				  && $event['message']['text'] != "EX6" && $event['message']['text'] != "ex6"
+				  && $event['message']['text'] != "EX7" && $event['message']['text'] != "ex7"
+				  && $event['message']['text'] != "EX8" && $event['message']['text'] != "ex8"
+				  && $event['message']['text'] != "EX9" && $event['message']['text'] != "ex9"
+				  && $event['message']['text'] != "EX10" && $event['message']['text'] != "ex10"
+				  && $event['message']['text'] != "EX11" && $event['message']['text'] != "ex11"
+				  && $event['message']['text'] != "EX12" && $event['message']['text'] != "ex12"
+				  && $event['message']['text'] != "EX13" && $event['message']['text'] != "ex13"
+				  && $event['message']['text'] != "EX14" && $event['message']['text'] != "ex14"
+				  && $event['message']['text'] != "EX15" && $event['message']['text'] != "ex15"
+				
+				 && $event['message']['text'] != "ท้องผูกTC" && $event['message']['text'] != "ท้องผูกtc" 
+				 && $event['message']['text'] != "ยาระบาย" && $event['message']['text'] != "ยาระบายแมกนีเซียม" 
+				 && $event['message']['text'] != "Milk of magnesia" && $event['message']['text'] != "milk of magnesia" 
+				 && $event['message']['text'] != "ยาระบายมะขามแขก" && $event['message']['text'] != "เริมTC" 
+				 && $event['message']['text'] != "เริมtc" && $event['message']['text'] != "Calamine" 
+				 && $event['message']['text'] != "คาลาไมน์โลชั่่น"&& $event['message']['text'] != "Calamine" 
+				 && $event['message']['text'] != "calamine" && $event['message']['text'] != "CALAMINE" 
+				 && $event['message']['text'] != "calamine lotion" && $event['message']['text'] != "Calamine lotion" 
+				 && $event['message']['text'] != "คลอร์เฟนิรามีนชนิดน้ำเชื่อม"
+				) { 
 
 				$text = "สวัสดีครับ ยินดีต้อนรับเข้าสู่ medicine bot หากคุณมีอาการเจ็บป่วยสามารถพิมพ์ชื่ออาการมาสอบถามได้เลยครับ เช่น หากคุณปวดหัว พิมพ์คำว่า \"ฉันรู้สึกปวดหัว\" หรือ พิมพ์ชื่อโรคเลยก็ได้ครับ เช่น \"ปวดหัว\" ทางเราจะให้คำปรึกษากลับไปครับผม ";
 				
@@ -485,5 +568,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK555";
-	//echo "OK9999";
+	//echo "OK555";
+	echo "OK9999";
