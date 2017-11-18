@@ -269,7 +269,7 @@
  				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
  				$ch = curl_init($url);
  			 } 
- // ผื่นไข้ งูสวัส
+ // ผื่นไข้ งูสวัด
 			else if ( 
 				( strpos( $textUser,"ผื่น") && strpos( $textUser,"ไข้") )&& ( $event['message']['text'] != "ผื่นคัน" )
 				 ||( strpos( $textUser,"ผื่น") && strpos( $textUser,"ปวดแสบปวดร้อน") )&& ( $event['message']['text'] != "ผื่นปวดแสบปวดร้อน" )
@@ -336,9 +336,11 @@
 			else if ( (strpos( $textUser,"ตุ่มใส") && strpos( $textUser,"ไข้"))
 				 ||(strpos( $textUser,"ตุ่มน้ำ") && strpos( $textUser,"ไข้"))
 				 ||(strpos( $textUser,"ตุุ่มใส") && strpos( $textUser,"ผิวหนัง"))
-				||strpos( $textUser,"ตุ่มใส") && $event['message']['text'] != "ตุ่มใส") { 
+				 ||(strpos( $textUser,"ตุุ่มพอง") && strpos( $textUser,"ผิวหนัง"))
+				  ||(strpos( $textUser,"ตุุ่มพอง") && strpos( $textUser,"ไข้"))
+				||strpos( $textUser,"เริม") && $event['message']['text'] != "เริม") { 
 
-				$text = " mint  ";
+				$text = "ถ้ามีอาการเป็นตุ่มพองใสเล็กๆ ต่อมาเกิดเป็นตุ่มน้ำอย่างรวดเร็วภายใน 1 - 2 วัน ในตุ่มมีน้ำใสๆ ตุ่มมักเกิดเป็นกลุ่มๆ ลักษณะตุ่มคล้ายของโรคงูสวัดและตุ่มโรคอีสุกอีใส แต่เกิดในตำแหน่งและมีการแพร่กระจายของตุ่มผิดกัน อาการเป็นอยู่ประมาณ 1 - 2 สัปดาห์ จากนั้นตุ่มก็จะแตกกลายเป็นแผลตื้นๆตกสะเก็ดแล้วก็หายไปในที่สุด สันนิษฐานได้เลยครับว่าเรากำลังเป็น เริม อยากรู้รายละเอียดโรคพิมพ์ \" เริม \" . ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -411,5 +413,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK555";
-	echo "OK9999";
+	echo "OK555";
+	//echo "OK9999";
