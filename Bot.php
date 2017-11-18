@@ -493,6 +493,11 @@
 				 && $event['message']['text'] != "calamine" && $event['message']['text'] != "CALAMINE" 
 				 && $event['message']['text'] != "calamine lotion" && $event['message']['text'] != "Calamine lotion" 
 				 && $event['message']['text'] != "คลอร์เฟนิรามีนชนิดน้ำเชื่อม"
+				 && $event['message']['text'] != "ท้องผูก" && $event['message']['text'] != "ท้องผูกมาก" 
+				 && $event['message']['text'] != "ท้องผูกอะ" && $event['message']['text'] != "ท้องผูกค่ะ" 
+				 && $event['message']['text'] != "ท้องผูกครับ" && $event['message']['text'] != "ท้องผูกอะหมอ" 
+				 && $event['message']['text'] != "ท้องผูกทำยังไงดี" && $event['message']['text'] != "ท้องผูกทำยังไง"
+				 && $event['message']['text'] != "ท้องผูกเราทำยังไง"
 				) { 
 
 				$text = "สวัสดีครับ ยินดีต้อนรับเข้าสู่ medicine bot หากคุณมีอาการเจ็บป่วยสามารถพิมพ์ชื่ออาการมาสอบถามได้เลยครับ เช่น หากคุณปวดหัว พิมพ์คำว่า \"ฉันรู้สึกปวดหัว\" หรือ พิมพ์ชื่อโรคเลยก็ได้ครับ เช่น \"ปวดหัว\" ทางเราจะให้คำปรึกษากลับไปครับผม ";
@@ -568,5 +573,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK555";
-	echo "OK9999";
+	echo "OK555";
+	//echo "OK9999";
