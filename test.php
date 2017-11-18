@@ -1,9 +1,6 @@
 <?php
 
-$dbname = 'User';
-$dbuser = 'root';
-$dbpass = 'root';
-$dbhost = 'localhost';
-$connect = mysql_connect($dbhost, $dbuser, $dbpass) or die("Unable to Connect to '$dbhost'");
 
+$con = mysql_connect('localhost','root','');
+$db = mysql_select_db('User');
 echo "Win" ;
