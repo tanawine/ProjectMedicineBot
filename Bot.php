@@ -377,7 +377,39 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 				$z = 1;
-			 } else if ( $z=123 ) { 
+			 } 
+//ท้องผูก	
+			else if ( strpos( $textUser,"ถ่ายไม่ออก") 
+				||(strpos( $textUser,"ไม่ถ่ายมาหลายวันแล้ว")  
+				||strpos( $textUser,"ท้องผูก")
+				||strpos( $textUser,"ถ่ายอุจจาระไม่สุด")  
+				||strpos( $textUser,"ถ่ายไม่สุด")) && ( $event['message']['text'] != "ท้องผูก" 
+								&& $event['message']['text'] != "ไม่ถ่ายมาหลายวันแล้ว"  
+								&& $event['message']['text'] != "ถ่ายไม่ออกำ"
+								&&  $event['message']['text'] != "ถ่ายอุจจาระไม่สุด" 
+								&& $event['message']['text'] != "ถ่ายไม่สุด")
+				&& ($event['message']['text'] != "ท้องผูกtc")&& ($event['message']['text'] != "ท้องผูกTC")) { 
+				$text = "อาการท้องผูกคือถ่ายอุจจาระน้อยกว่าปกติที่เคยเป็น อุจจาระมีลักษณะเป็นก้อนแข็ง เป็นเม็ดเล็ก ๆ รู้สึกถ่ายอุจจาระไม่ออก หรือถ่ายได้ไม่สุด อาจมีอาการเจ็บขณะถ่ายอุจจาระร่วมด้วย รู้สึกท้องอืด ปวดท้อง หรือปวดเกร็งบริเวณหน้าท้องโดยยาที่ใช้รักษาอาการท้องผูก หมอขอแนะนำคือ ยาแก้ท้องผูก (Anticonstipation) หรือ ยาระบายอ่อน (Laxative) หรือ นิยมเรียกว่า \"ยาถ่าย\" เช่น ยามะขามแขกแคปชูล ห้ามใช้เมื่อมีอาการปวดท้อง หรือคลื่นไส้อาเจียน  \n*กรณีอยากเห็นวิธีดูแลตัวเองพิมพ์ \"ท้องผูกTC\"\n*กรณีอยากเห็นรูปตัวอย่างยาพิมพ์ \"ยาระบายมะขามแขก\" . ";
+				
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+				
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages],
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
+			 }		
+			else if ( $z=123 ) { 
 
 				$text = "สวัสดีครับ ยินดีต้อนรับเข้าสู่ medicine bot หากคุณมีอาการเจ็บป่วยสามารถพิมพ์ชื่ออาการมาสอบถามได้เลยครับ เช่น หากคุณปวดหัว พิมพ์คำว่า \"ฉันรู้สึกปวดหัว\" หรือ พิมพ์ชื่อโรคเลยก็ได้ครับ เช่น \"ปวดหัว\" ทางเราจะให้คำปรึกษากลับไปครับผม ";
 				
@@ -452,5 +484,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK555";
-	//echo "OK9999";
+	//echo "OK555";
+	echo "OK9999";
