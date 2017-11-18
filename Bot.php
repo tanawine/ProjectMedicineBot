@@ -5,6 +5,7 @@
 	$content = file_get_contents('php://input');
 	// Parse JSON
 	$events = json_decode($content, true);
+	$z = 123;
 	// Validate parsed JSON data
 	if (!is_null($events['events'])) {
 		// Loop through each event
@@ -38,6 +39,7 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
+			 	$z = 1;
 			
 			}
 //ไม่ป่วย
@@ -68,6 +70,7 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
+				$z = 1;
 			 }
 //ไอ
 			else if (strpos( $textUser,"ไอ") ||  $event['message']['text'] == "ไอ" 
@@ -95,6 +98,7 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
+				$z = 1;
 				
 				
 			}
@@ -131,11 +135,14 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
+				$z = 1;
 			 }
 //ไข้
 			else if ( (strpos( $textUser,"ไข้")&& !strpos($textUser,"ผื่น")) ||  $event['message']['text'] == "ไข้" || 
 				 ( strpos( $textUser,"มีไข้")&& !strpos($textUser,"ผื่น")) ||  $event['message']['text'] == "มีไข้"||
-				strpos( $textUser,"ตัวร้อน") ||  $event['message']['text'] == "ตัวร้อน" ) {
+				strpos( $textUser,"ตัวร้อน") ||  $event['message']['text'] == "ตัวร้อน" || 
+				 ( strpos( $textUser,"ไข้")&& strpos($textUser,"ยังไง")) || ( strpos( $textUser,"ไข้")&& strpos($textUser,"ไง")) ||
+				( strpos( $textUser,"ไข้")&& strpos($textUser,"อย่างไร")) ) {
 				// Get text sent
 				$a = rand(0,1);
 				if( $a==0){
@@ -162,6 +169,7 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);	
+				$z = 1;
 			}
 // ป่วย 
 			else if ((strpos( $textUser,"ป่วย")  
@@ -193,6 +201,7 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
+				$z = 1;
 			 }
 
 //ท้องเสีย
@@ -227,6 +236,7 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
+				$z = 1;
 			 }	
 // แน่นท้อง อึดอัดท้อง มีลมในกระเพาะ
 			else if ((strpos( $textUser,"แน่นท้อง")
@@ -268,6 +278,7 @@
  				$post = json_encode($data);
  				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
  				$ch = curl_init($url);
+				$z = 1;
  			 } 
  // ผื่นไข้ งูสวัด
 			else if ( 
@@ -296,6 +307,7 @@
  				$post = json_encode($data);
  				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
  				$ch = curl_init($url);
+				$z = 1;
  			 } 
 // โรคผื่นคัน		
 			else if ( (strpos( $textUser,"ผื่น") && strpos( $textUser,"คัน"))
@@ -332,6 +344,7 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
+				$z = 1;
 			 }
 //เริม		
 			else if ( (strpos( $textUser,"ตุ่มใส") && strpos( $textUser,"ไข้"))
@@ -339,10 +352,9 @@
 				 ||(strpos( $textUser,"ตุุ่มใส") && strpos( $textUser,"ผิวหนัง"))
 				 ||(strpos( $textUser,"ตุุ่มพอง") && strpos( $textUser,"ผิวหนัง"))
 				  ||(strpos( $textUser,"ตุุ่มพอง") && strpos( $textUser,"ไข้"))
-				||strpos( $textUser,"เริม") && $event['message']['text'] != "เริม"
-				&& ($event['message']['text'] != "เริมtc")&& ($event['message']['text'] != "เริมTC")) { 
+				||strpos( $textUser,"เริม") && $event['message']['text'] != "เริม") { 
 
-				$text = "ถ้ามีอาการเป็นตุ่มพองใสเล็กๆ ต่อมาเกิดเป็นตุ่มน้ำอย่างรวดเร็วภายใน 1 - 2 วัน ตุ่มมักเกิดเป็นกลุ่มๆ ลักษณะตุ่มคล้ายของโรคงูสวัดและตุ่มโรคอีสุกอีใส แต่เกิดในตำแหน่งและมีการแพร่กระจายของตุ่มผิดกัน อาการเป็นอยู่ประมาณ 1 - 2 สัปดาห์ จากนั้นตุ่มก็จะแตกกลายเป็นแผลตื้นๆตกสะเก็ดแล้วก็หายไปในที่สุด สันนิษฐานได้เลยครับว่าเรากำลังเป็น เริม  *กรณีอยากรู้รายละเอียดโรคพิมพ์ \" เริม \" . ";
+				$text = "ถ้ามีอาการเป็นตุ่มพองใสเล็กๆ ต่อมาเกิดเป็นตุ่มน้ำอย่างรวดเร็วภายใน 1 - 2 วัน ตุ่มมักเกิดเป็นกลุ่มๆ ลักษณะตุ่มคล้ายของโรคงูสวัดและตุ่มโรคอีสุกอีใส แต่เกิดในตำแหน่งและมีการแพร่กระจายของตุ่มผิดกัน อาการเป็นอยู่ประมาณ 1 - 2 สัปดาห์ จากนั้นตุ่มก็จะแตกกลายเป็นแผลตื้นๆตกสะเก็ดแล้วก็หายไปในที่สุด สันนิษฐานได้เลยครับว่าเรากำลังเป็น เริม อยากรู้รายละเอียดโรคพิมพ์ \" เริม \" . ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -361,7 +373,29 @@
 				$post = json_encode($data);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
-			 }
+				$z = 1;
+			 } else if ( $z==123 ) { 
+
+				$text = "สวัสดีครับ ยินดีต้อนรับเข้าสู่ medicine bot หากคุณมีอาการเจ็บป่วยสามารถพิมพ์ชื่ออาการมาสอบถามได้เลยครับ เช่น หากคุณปวดหัว พิมพ์คำว่า"ฉันรู้สึกปวดหัว" หรือ พิมพ์ชื่อโรคเลยก็ได้ครับ เช่น "ปวดหัว" ทางเราจะให้คำปรึกษากลับไปครับผม ";
+				
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+				
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages],
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
+			 } 
 
 // test
 			//else if ( strpos( $textUser, "win") {
