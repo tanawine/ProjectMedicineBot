@@ -200,9 +200,7 @@
 				|| strpos( $textUser,"ตุ่มน้ำ")  
 				||strpos( $textUser,"ตุ่มแดง") 
 				||strpos( $textUser,"จุดแดง")
-				||strpos( $textUser,"ตุ่มใส")
-				|| strpos( $textUser,"ผื่นคัน")
-				|| strpos( $textUser,"ผื่นคันtc")) && ( $event['message']['text'] != "คัน" 
+				||strpos( $textUser,"ตุ่มใส")) && ( $event['message']['text'] != "คัน" 
 								&& $event['message']['text'] != "ผื่น"  
 								&& $event['message']['text'] != "ตุ่มน้ำ"
 								&&  $event['message']['text'] != "ตุ่มแดง" 
