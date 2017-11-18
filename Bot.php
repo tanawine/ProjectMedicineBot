@@ -332,6 +332,32 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 			 }
+//เริม		
+			else if ( (strpos( $textUser,"ตุ่มใส") && strpos( $textUser,"ไข้"))
+				 ||(strpos( $textUser,"ตุ่มน้ำ") && strpos( $textUser,"ไข้"))
+				 ||(strpos( $textUser,"ตุุ่มใส") && strpos( $textUser,"ผิวหนัง"))
+				||strpos( $textUser,"ตุ่มใส")) &&  && $event['message']['text'] != "ตุ่มใส") { 
+
+				$text = " mint  ";
+				
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+				
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages],
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
+			 }
 
 // test
 			//else if ( strpos( $textUser, "win") {
@@ -385,5 +411,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK555";
-	//echo "OK9999";
+	//echo "OK555";
+	echo "OK9999";
