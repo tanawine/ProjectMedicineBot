@@ -194,6 +194,39 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 			 }
+// โรคผื่นคัน ผื่นไข้			
+			else if ((strpos( $textUser,"คัน")  
+				|| (strpos( $textUser,"ผื่น")&& !strpos($textUser,"ไข้"))
+				|| strpos( $textUser,"ตุ่มน้ำ")  
+				||strpos( $textUser,"ตุ่มแดง") 
+				||strpos( $textUser,"จุดแดง")
+				||strpos( $textUser,"ตุ่มใส")) && ( $event['message']['text'] != "คัน" 
+								&& $event['message']['text'] != "ผื่น"  
+								&& $event['message']['text'] != "ตุ่มน้ำ"
+								&&  $event['message']['text'] != "ตุ่มแดง" 
+								&& $event['message']['text'] != "จุดแดง"
+								&& $event['message']['text'] != "ตุ่มใส") { 
+
+				$text = "\t\tหากคนไข้มีอาการผื่นคัน ผื่นแดง หรือตุ่มใส บริเวณผิวหนัง หรือร่างกายที่เกิดจากการแพ้  ให้พิมพ์คำว่า \"ผื่นคัน\" นะครับ \n\t\t ถ้าหากคนไข้มีผื่นคัน แล้วมีอาการไข้ประกอบด้วย อาจจะเป็นผื่นจากโรคงูสวัสก็ได้ครับ อาการโรคงูสวัสดิพิมพ์ \" งูสวัส \" . ";
+				
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+				
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages],
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
+			 }
 
 //ท้องเสีย
 			else if ((strpos( $textUser,"ถ่ายบ่อย")  
