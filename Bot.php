@@ -336,7 +336,7 @@
 			else if ( (strpos( $textUser,"ตุ่มใส") && strpos( $textUser,"ไข้"))
 				 ||(strpos( $textUser,"ตุ่มน้ำ") && strpos( $textUser,"ไข้"))
 				 ||(strpos( $textUser,"ตุุ่มใส") && strpos( $textUser,"ผิวหนัง"))
-				||strpos( $textUser,"ตุ่มใส")) &&  && $event['message']['text'] != "ตุ่มใส") { 
+				||strpos( $textUser,"ตุ่มใส") && $event['message']['text'] != "ตุ่มใส") { 
 
 				$text = " mint  ";
 				
