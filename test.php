@@ -2,7 +2,7 @@
 
 $dbname = 'User';
 $dbuser = 'root';
-$dbpass = '';
+$dbpass = 'root';
 $dbhost = 'localhost';
 $connect = mysql_connect($dbhost, $dbuser, $dbpass) or die("Unable to Connect to '$dbhost'");
 
