@@ -270,14 +270,12 @@
  				$ch = curl_init($url);
  			 } 
  // ผื่นไข้ งูสวัส
-			else if ( ( strpos( $textUser,"ผื่น") && strpos( $textUser,"ไข้") )
-				 && ( $event['message']['text'] != "ผื่นคัน" )
-				 ||( strpos( $textUser,"ผื่น") && strpos( $textUser,"ปวดแสบปวดร้อน") )
-				 && ( $event['message']['text'] != "ผื่นปวดแสบปวดร้อน" )
-				  ||( strpos( $textUser,"ตุ่มใส") && strpos( $textUser,"ผื่นแดง") 
-				 && ( $event['message']['text'] != "ผื่นแดง" )
-				||strpos( $textUser,"ปวดแสบปวดร้อน")) && ( $event['message']['text'] != "ปวดแสบปวดร้อน"
-				||strpos( $textUser,"ตุ่มใส")) && ( $event['message']['text'] != "ตุ่มใส")){
+			else if ( 
+				( strpos( $textUser,"ผื่น") && strpos( $textUser,"ไข้") )&& ( $event['message']['text'] != "ผื่นคัน" )
+				 ||( strpos( $textUser,"ผื่น") && strpos( $textUser,"ปวดแสบปวดร้อน") )&& ( $event['message']['text'] != "ผื่นปวดแสบปวดร้อน" )
+				  ||( strpos( $textUser,"ตุ่มใส") && strpos( $textUser,"ผื่นแดง") )&& ( $event['message']['text'] != "ผื่นแดง" )
+				||(strpos( $textUser,"ปวดแสบปวดร้อน")) && ( $event['message']['text'] != "ปวดแสบปวดร้อน")
+				||(strpos( $textUser,"ตุ่มใส")) && ( $event['message']['text'] != "ตุ่มใส")){
 			
  				$text = "\t\tหากคนไข้เป็นผื่นแดง โดยผื่นขึ้นตามแนวเส้นประสาท ประกอบกับการมีไข้ และรู้สึกปวดแสบปวดร้อบปริเวณผื่นแดง แสดงว่าคนไข้เป็นโรคงูสวัส \n*กรณีโรคงูสวัดพิมพ์ \" งูสวัด \" \n\t\tถ้าหากคนไข้มีตุ่มใส ประกอบกับการเป็นไข้แสดงว่าคนไข้เป็นเริมนะครับ \n*กรณีเริมพิมพ์ \" เริม \" . ";
  				
