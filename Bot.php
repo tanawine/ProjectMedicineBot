@@ -298,7 +298,8 @@
  				$ch = curl_init($url);
  			 } 
 // โรคผื่นคัน		
-			else if ((strpos( $textUser,"คัน")  
+			else if ( (strpos( $textUser,"ผื่น") && strpos( $textUser,"คัน"))
+				 ||(strpos( $textUser,"คัน")  
 				|| (strpos( $textUser,"ผื่น")&& !strpos($textUser,"ไข้"))
 				|| strpos( $textUser,"ตุ่มน้ำ")  
 				||strpos( $textUser,"ตุ่มแดง") 
@@ -383,5 +384,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK555";
-	echo "OK9999";
+	echo "OK555";
+	//echo "OK9999";
