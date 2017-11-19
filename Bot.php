@@ -711,5 +711,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK555";
-	echo "mint";
+	echo "OK55599";
+	//echo "mint";
