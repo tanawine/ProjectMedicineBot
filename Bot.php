@@ -478,7 +478,10 @@
 				||(strpos( $textUser,"เมือก") && strpos( $textUser,"อวัยวะเพศ"))
 				||(strpos( $textUser,"หนอง") && strpos( $textUser,"อวัยวะเพศ"))
 							&& $event['message']['text'] != "ตกขาว" 
-							&& $event['message']['text'] != "เมือกในช่องคลอด") { 
+							&& $event['message']['text'] != "เมือกในช่องคลอด"
+				&& $event['message']['text'] != "ตกขาวทำยังไง"
+				&& $event['message']['text'] != "ตกขาวทำยังไงดี"
+				) { 
 
 				$text = "หากมี อาการที่มีเมือกเหลวไหลออกมาจากช่องคลอดโดยไม่ใช่เลือดประจำเดือน เมือกนี้ถูกขับออกจากปากมดลูกมายังช่องคลอด เพื่อสร้างความชุ่มชื้นให้บริเวณช่องคลอดและช่วยป้องกันการติดเชื้อภายในช่องคลอด โดยตกขาวปกติจะมีสีขาวหรือใส และไม่มีกลิ่นเหม็น ส่วนตกขาวที่มีสีเทา สีเขียว สีเหลือง สีชมพู หรือมีเลือดปน และส่งกลิ่นเหม็นคล้ายเนื้อเน่า จะเป็นสัญญาณของปัญหาสุขภาพที่เกิดขึ้นภายใน **กรณีอยากรู้รายละเอียดพิมพ์ \"ตกขาว\" . ";
 				
@@ -590,19 +593,20 @@
 				 && $event['message']['text'] != "ท้องผูกทำยังไงดี" && $event['message']['text'] != "ท้องผูกทำยังไง"
 				 && $event['message']['text'] != "ท้องผูกเราทำยังไง"
 				 
-				  && $event['message']['text'] != "ปวดหัว" && $event['message']['text'] != "ปวดศีรษะ" 
+				 && $event['message']['text'] != "ปวดหัว" && $event['message']['text'] != "ปวดศีรษะ" 
 				 && $event['message']['text'] != "เจ็บหัว" && $event['message']['text'] != "ปวดหัวทำยังไงดีค่ะ" 
 				 && $event['message']['text'] != "ปวดหัวทำยังไงดี" && $event['message']['text'] != "ปวดหัวทำยังไง" 
 				 && $event['message']['text'] != "ปวดหัวค่ะ" && $event['message']['text'] != "ปวดหัวครับ"
 				 && $event['message']['text'] != "ปวดหัวค่ะ" && $event['message']['text'] != "ปวดหัวครับ"
-				 
-				  && $event['message']['text'] != "อาการปวดหัวเบื้องต้น" && $event['message']['text'] != "วิธีกำจัดเหา"
- 				  && $event['message']['text'] != "เบนซิลเบนโซเอต" && $event['message']['text'] != "Benzyl benzoate"
+				
+				 && $event['message']['text'] != "อาการปวดหัวเบื้องต้น" && $event['message']['text'] != "วิธีกำจัดเหา"
+ 				 && $event['message']['text'] != "เบนซิลเบนโซเอต" && $event['message']['text'] != "Benzyl benzoate"
  				 && $event['message']['text'] != "benzyl benzoate" && $event['message']['text'] != "เหา"
- 				&& $event['message']['text'] != "คันหัว" && $event['message']['text'] != "คันศีรษะ" 
+ 			 	 && $event['message']['text'] != "คันหัว" && $event['message']['text'] != "คันศีรษะ" 
 		
-				   && $event['message']['text'] != "โคลไตรมาโซล" && $event['message']['text'] != "ตกขาว"
- 				  && $event['message']['text'] != "เมือกในช่องคลอด" 
+				 && $event['message']['text'] != "โคลไตรมาโซล" && $event['message']['text'] != "ตกขาว"
+ 				 && $event['message']['text'] != "เมือกในช่องคลอด"  && $event['message']['text'] != "ตกขาวทำยังไง" 
+				 && $event['message']['text'] != "ตกขาวทำยังไงดี"
  				
 				 
 				
@@ -681,5 +685,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK555";
-	//echo "mint";
+	//echo "OK555";
+	echo "mint";
