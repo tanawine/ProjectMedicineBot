@@ -535,7 +535,10 @@
 				 && $event['message']['text'] != "ปวดหัวทำยังไงดี" && $event['message']['text'] != "ปวดหัวทำยังไง" 
 				 && $event['message']['text'] != "ปวดหัวค่ะ" && $event['message']['text'] != "ปวดหัวครับ"
 				 && $event['message']['text'] != "ปวดหัวค่ะ" && $event['message']['text'] != "ปวดหัวครับ"
-				 && $event['message']['text'] != "อาการปวดหัวเบื้องต้น" 
+				 && $event['message']['text'] != "อาการปวดหัวเบื้องต้น" && $event['message']['text'] != "วิธีกำจัดเหา"
+				  && $event['message']['text'] != "เบนซิลเบนโซเอต" && $event['message']['text'] != "Benzyl benzoate"
+				 && $event['message']['text'] != "benzyl benzoate" && $event['message']['text'] != "เหา"
+				&& $event['message']['text'] != "คันหัว" && $event['message']['text'] != "เหา"
 				) { 
 
 				$text = "สวัสดีครับ ยินดีต้อนรับเข้าสู่ medicine bot หากคุณมีอาการเจ็บป่วยสามารถพิมพ์ชื่ออาการมาสอบถามได้เลยครับ เช่น หากคุณปวดหัว พิมพ์คำว่า \"ฉันรู้สึกปวดหัว\" หรือ พิมพ์ชื่อโรคเลยก็ได้ครับ เช่น \"ปวดหัว\" ทางเราจะให้คำปรึกษากลับไปครับผม ";
@@ -611,5 +614,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK555";
-	//echo "OK9999";
+	//echo "OK555";
+	echo "OK9999";
