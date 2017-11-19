@@ -413,7 +413,35 @@
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
 				$z = 1;
-			 }		
+			 }	
+//ปวดหัว
+			else if ((strpos( $textUser,"ปวดหัว")  
+				|| strpos( $textUser,"ปวดศีรษะ")
+				|| strpos( $textUser,"เจ็บหัว")) && ( $event['message']['text'] != "ปวดหัว" 
+								      && $event['message']['text'] != "ปวดศีรษะ"  
+								     && $event['message']['text'] != "เจ็บหัว")) { 
+
+				$text = "อาการปวดศีรษะมีได้ตั้งแต่ปวดเพียงตำแหน่งใดตำแหน่งหนึ่งของศีรษะ หรือปวดทั้งศีรษะ หรือปวดร้าวไปยังอวัยวะอื่นๆในศีรษะเช่น ตาหรือต้นคอ เป็นต้น ทั้งนี้ขึ้นกับสาเหตุซึ่งรวมถึงความรุนแรงของอาการด้วย ใน Medicine Botจะกล่าวถึงอาการปวดหัวเบื้องต้นที่ไม่รุนแรงเท่านั้น \n*กรณีอยากรู้อาการปวดหัวเบื้องต้นพิมพ์ \"อาการปวดหัวเบื้องต้น\" . ";
+				
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+				
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages],
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
+				$z = 1;
+			 }
 			else if ( $z=123 && $event['message']['text'] != "หวัดดี"&& $event['message']['text'] != "ดีค่ะ" 
 				 && $event['message']['text'] != "ดีครับ" && $event['message']['text'] != "สวัสดี"
 				 && $event['message']['text'] != "สวัสดีค่ะ"&& $event['message']['text'] != "สวัสดีครับ" 
@@ -577,5 +605,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK555";
-	//echo "OK9999";
+	//echo "OK555";
+	echo "OK9999";
