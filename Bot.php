@@ -469,6 +469,38 @@
 				$ch = curl_init($url);
 				$z = 1;
 			 }
+//ตกขาว
+			else if ((strpos( $textUser,"ตกขาว")  
+				|| strpos( $textUser,"เมือกในช่องคลอด")
+				|| strpos( $textUser,"ช่องคลอด")
+				|| strpos( $textUser,"อวัยวะเพศ")
+				||(strpos( $textUser,"คัน") && strpos( $textUser,"อวัยวะเพศ")
+				||(strpos( $textUser,"เมือก") && strpos( $textUser,"อวัยวะเพศ")
+				||(strpos( $textUser,"หนอง") && strpos( $textUser,"อวัยวะเพศ")
+							&& ( $event['message']['text'] != "ตกขาว" 
+							&& $event['message']['text'] != "เมือกในช่องคลอด")) { 
+
+				$text = "หากมี อาการที่มีเมือกเหลวไหลออกมาจากช่องคลอดโดยไม่ใช่เลือดประจำเดือน เมือกนี้ถูกขับออกจากปากมดลูกมายังช่องคลอด เพื่อสร้างความชุ่มชื้นให้บริเวณช่องคลอดและช่วยป้องกันการติดเชื้อภายในช่องคลอด โดยตกขาวปกติจะมีสีขาวหรือใส และไม่มีกลิ่นเหม็น ส่วนตกขาวที่มีสีเทา สีเขียว สีเหลือง สีชมพู หรือมีเลือดปน และส่งกลิ่นเหม็นคล้ายเนื้อเน่า จะเป็นสัญญาณของปัญหาสุขภาพที่เกิดขึ้นภายใน **กรณีอยากรู้รายละเอียดพิมพ์ \"ตกขาว\" . ";
+				
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+				
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages],
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
+				$z = 1;
+			 }
 			else if ( $z=123 && $event['message']['text'] != "หวัดดี"&& $event['message']['text'] != "ดีค่ะ" 
 				 && $event['message']['text'] != "ดีครับ" && $event['message']['text'] != "สวัสดี"
 				 && $event['message']['text'] != "สวัสดีค่ะ"&& $event['message']['text'] != "สวัสดีครับ" 
@@ -569,6 +601,9 @@
  				 && $event['message']['text'] != "benzyl benzoate" && $event['message']['text'] != "เหา"
  				&& $event['message']['text'] != "คันหัว" && $event['message']['text'] != "คันศีรษะ" 
 		
+				   && $event['message']['text'] != "โคลไตรมาโซล" && $event['message']['text'] != "ตกขาว"
+ 				  && $event['message']['text'] != "เมือกในช่องคลอด" 
+ 				
 				 
 				
 				) { 
@@ -646,5 +681,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK555";
-	echo "mint";
+	echo "OK555";
+	//echo "mint";
