@@ -416,7 +416,7 @@
 				|| strpos( $textUser,"ปวดศีรษะ")
 				|| strpos( $textUser,"เจ็บหัว")) && ( $event['message']['text'] != "ปวดหัว" 
 								      && $event['message']['text'] != "ปวดศีรษะ"  
-								     && $event['message']['text'] != "เจ็บหัว")
+								     && $event['message']['text'] != "เจ็บหัว"
 								     && $event['message']['text'] != "อาการปวดหัวเบื้องต้น")) { 
 				) { 
 
@@ -535,6 +535,11 @@
 				 && $event['message']['text'] != "ปวดหัวทำยังไงดี" && $event['message']['text'] != "ปวดหัวทำยังไง" 
 				 && $event['message']['text'] != "ปวดหัวค่ะ" && $event['message']['text'] != "ปวดหัวครับ"
 				 && $event['message']['text'] != "ปวดหัวค่ะ" && $event['message']['text'] != "ปวดหัวครับ"
+				 && $event['message']['text'] != "อาการปวดหัวเบื้องต้น" && $event['message']['text'] != "วิธีกำจัดเหา"
+ -				  && $event['message']['text'] != "เบนซิลเบนโซเอต" && $event['message']['text'] != "Benzyl benzoate"
+ -				 && $event['message']['text'] != "benzyl benzoate" && $event['message']['text'] != "เหา"
+ -				&& $event['message']['text'] != "คันหัว" && $event['message']['text'] != "เหา"
+				 
 				
 				) { 
 
