@@ -507,6 +507,29 @@
 				$z = 1;
 			 }
 //เช็ดอาการปวดท้อง
+			else if (strpos( $textUser,"ปวดท้อง") && $event['message']['text'] != "ปวดท้อง" ) { 
+
+				$text = "ถ้ามีอาการปวดท้อง แบบท้องเสีย ถ่ายเป็นน้ำ พิมพ์\"มีอาการท้องเสีย\" หรือ กรณีอยากทราบรายละเอียดการดูแลตัวเองพิมพ์ \"ท้องเสียTC\" \nถ้ามีอาการปวดท้อง แบบท้องอืด ท้องเฟ้อ มีลมในกระเพาะอาหาร พิมพ์ \"มีอาการท้องเฟ้อ\" หรือ *กรณีอยากรู้เรื่องเกี่ยวกับการเปลี่ยนพฤติกรรมที่เสี่ยงต่ออาการท้องอืด พิมพ์ \"เปลี่ยนพฤติกรรม\"\nถ้ามีอาการปวดท้อง แบบท้องผูก ไม่ถ่ายมาหลายวันแล้ว ถ่ายไม่สุด พิมพ์ \"มีอาการท้องผูก\" หรือ กรณีอยากเห็นวิธีดูแลตัวเองพิมพ์ \"ท้องผูกTC\" . " ;
+				
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+				
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages],
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
+				$z = 1;
+			 }
 			
 			else if ( $z=123 && $event['message']['text'] != "หวัดดี"&& $event['message']['text'] != "ดีค่ะ" 
 				 && $event['message']['text'] != "ดีครับ" && $event['message']['text'] != "สวัสดี"
@@ -689,5 +712,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK55599";
-	//echo "mint";
+	//echo "OK55599";
+	echo "mint";
