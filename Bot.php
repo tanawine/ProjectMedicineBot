@@ -440,6 +440,35 @@
 				$ch = curl_init($url);
 				$z = 1;
 			 }
+//เหา 
+			else if ((strpos( $textUser,"เหา")  
+				|| strpos( $textUser,"คันหัว")
+				|| strpos( $textUser,"คันศีรษะ")) && ( $event['message']['text'] != "เหา" 
+								      && $event['message']['text'] != "คันศีรษะ"  
+								     && $event['message']['text'] != "คันหัว"
+								     && $event['message']['text'] != "วิธีกำจัดเหา")) { 
+
+				$text = "ใช้เบนซิลเบนโซเอต หรือสมุนไพรน้อยหน่า \n ถ้าต้องการหายเร็ว หมอแนะนำว่าวิธีโกนผมจะทำให้หายเร็วที่สุด \n**กรณีอยากรู้รายละเอียดยากำจัดเหาพิมพ์  \"เบนซิลเบนโซเอต\" **กรณีอยากรู้รายละเอียดวิธีกำจัดเหาพิมพ์ \"วิธีกำจัดเหา\" . ";
+				
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+				
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages],
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url);
+				$z = 1;
+			 }
 			else if ( $z=123 && $event['message']['text'] != "หวัดดี"&& $event['message']['text'] != "ดีค่ะ" 
 				 && $event['message']['text'] != "ดีครับ" && $event['message']['text'] != "สวัสดี"
 				 && $event['message']['text'] != "สวัสดีค่ะ"&& $event['message']['text'] != "สวัสดีครับ" 
@@ -538,7 +567,7 @@
 				  && $event['message']['text'] != "อาการปวดหัวเบื้องต้น" && $event['message']['text'] != "วิธีกำจัดเหา"
  				  && $event['message']['text'] != "เบนซิลเบนโซเอต" && $event['message']['text'] != "Benzyl benzoate"
  				 && $event['message']['text'] != "benzyl benzoate" && $event['message']['text'] != "เหา"
- 				&& $event['message']['text'] != "คันหัว" 
+ 				&& $event['message']['text'] != "คันหัว" && $event['message']['text'] != "คันศีรษะ" 
 		
 				 
 				
@@ -618,4 +647,4 @@
 		}
 	}
 	//echo "OK555";
-	echo "OK9999";
+	echo "mint";
