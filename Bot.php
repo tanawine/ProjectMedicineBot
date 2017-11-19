@@ -144,7 +144,7 @@
 //ไข้
 			else if ( (strpos( $textUser,"ไข้")&& !strpos($textUser,"ผื่น")) ||  $event['message']['text'] == "ไข้" || 
 				 ( strpos( $textUser,"มีไข้")&& !strpos($textUser,"ผื่น")) ||  $event['message']['text'] == "มีไข้"||
-				strpos( $textUser,"ตัวร้อน") ||  $event['message']['text'] == "ตัวร้อน" ||
+				strpos( $textUser,"ตัวร้อน") ||  $event['message']['text'] == "ตัวร้อน" ||strpos( $textUser,"หวัด") ||  $event['message']['text'] == "หวัด"||
 				 ( strpos( $textUser,"ไข้")&& strpos($textUser,"ยังไง")) || ( strpos( $textUser,"ไข้")&& strpos($textUser,"ไง")) ||
 				( strpos( $textUser,"ไข้")&& strpos($textUser,"อย่างไร")) ) {
 				// Get text sent
