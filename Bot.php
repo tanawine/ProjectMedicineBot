@@ -144,7 +144,7 @@
 //ไข้
 			else if ( (strpos( $textUser,"ไข้")&& !strpos($textUser,"ผื่น")) ||  $event['message']['text'] == "ไข้" || 
 				 ( strpos( $textUser,"มีไข้")&& !strpos($textUser,"ผื่น")) ||  $event['message']['text'] == "มีไข้"||
-				strpos( $textUser,"ตัวร้อน") ||  $event['message']['text'] == "ตัวร้อน" || 
+				strpos( $textUser,"ตัวร้อน") ||  $event['message']['text'] == "ตัวร้อน" ||  strpos( $textUser,"หวัด") ||  $event['message']['text'] == "หวัด"
 				 ( strpos( $textUser,"ไข้")&& strpos($textUser,"ยังไง")) || ( strpos( $textUser,"ไข้")&& strpos($textUser,"ไง")) ||
 				( strpos( $textUser,"ไข้")&& strpos($textUser,"อย่างไร")) ) {
 				// Get text sent
@@ -189,7 +189,7 @@
 								     && $event['message']['text'] != "ไม่ok"
 								    &&  $event['message']['text'] != "ไม่โอเค" 
 								    && $event['message']['text'] != "ไม่ค่อยสบาย")) { 
-				$text = "เป็นอะไรไหนบอกหมอได้นะครับ บอกทีละอาการจะได้ให้คำแนะนำได้ง่ายๆ จาก CODE . ";
+				$text = "เป็นอะไรไหนบอกหมอได้นะครับ บอกทีละอาการจะได้ให้คำแนะนำได้ง่ายๆ . ";
 				
 				// Get replyToken
 				$replyToken = $event['replyToken'];
@@ -356,7 +356,7 @@
 //เริม		
 			else if ( (strpos( $textUser,"ตุ่มใส") && strpos( $textUser,"ไข้"))
 				 ||(strpos( $textUser,"ตุ่มน้ำ") && strpos( $textUser,"ไข้"))
-				 ||(strpos( $textUser,"ตุุ่มใส") && strpos( $textUser,"ผิวหนัง"))
+				 ||(strpos( $textUser,"ตุ่มใส") && strpos( $textUser,"ผิวหนัง"))
 				 ||(strpos( $textUser,"ตุุ่มพอง") && strpos( $textUser,"ผิวหนัง"))
 				  ||(strpos( $textUser,"ตุุ่มพอง") && strpos( $textUser,"ไข้"))
 				||strpos( $textUser,"เริม") && $event['message']['text'] != "เริม") { 
@@ -521,7 +521,7 @@
 				 && $event['message']['text'] != "Milk of magnesia" && $event['message']['text'] != "milk of magnesia" 
 				 && $event['message']['text'] != "ยาระบายมะขามแขก" && $event['message']['text'] != "เริมTC" 
 				 && $event['message']['text'] != "เริมtc" && $event['message']['text'] != "Calamine" 
-				 && $event['message']['text'] != "คาลาไมน์โลชั่่น"&& $event['message']['text'] != "Calamine" 
+				 && $event['message']['text'] != "คาลาไมน์โลชั่น"&& $event['message']['text'] != "Calamine" 
 				 && $event['message']['text'] != "calamine" && $event['message']['text'] != "CALAMINE" 
 				 && $event['message']['text'] != "calamine lotion" && $event['message']['text'] != "Calamine lotion" 
 				 && $event['message']['text'] != "คลอร์เฟนิรามีนชนิดน้ำเชื่อม"
@@ -612,5 +612,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	//echo "OK555";
-	echo "OK9999";
+	echo "OK555";
+	//echo "OK9999";
