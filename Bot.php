@@ -536,9 +536,9 @@
 				 && $event['message']['text'] != "ปวดหัวค่ะ" && $event['message']['text'] != "ปวดหัวครับ"
 				 
 				  && $event['message']['text'] != "อาการปวดหัวเบื้องต้น" && $event['message']['text'] != "วิธีกำจัดเหา"
- -				  && $event['message']['text'] != "เบนซิลเบนโซเอต" && $event['message']['text'] != "Benzyl benzoate"
- -				 && $event['message']['text'] != "benzyl benzoate" && $event['message']['text'] != "เหา"
- -				&& $event['message']['text'] != "คันหัว" 
+ 				  && $event['message']['text'] != "เบนซิลเบนโซเอต" && $event['message']['text'] != "Benzyl benzoate"
+ 				 && $event['message']['text'] != "benzyl benzoate" && $event['message']['text'] != "เหา"
+ 				&& $event['message']['text'] != "คันหัว" 
 		
 				 
 				
