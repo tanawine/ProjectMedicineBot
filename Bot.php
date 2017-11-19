@@ -604,21 +604,21 @@
 				  && $event['message']['text'] != "EX13" && $event['message']['text'] != "ex13"
 				  && $event['message']['text'] != "EX14" && $event['message']['text'] != "ex14"
 				  && $event['message']['text'] != "EX15" && $event['message']['text'] != "ex15"
-				  && $event['message']['text'] != "eX1" 
-				  && $event['message']['text'] != "eX2" 
-				  && $event['message']['text'] != "eX3"
-				   && $event['message']['text'] != "eX4" 
-				  && $event['message']['text'] != "eX5" 
-				  && $event['message']['text'] != "eX6" 
-				  && $event['message']['text'] != "eX7" 
-				  && $event['message']['text'] != "eX8" 
-				  && $event['message']['text'] != "eX9"
-				  && $event['message']['text'] != "eX10" 
-				  && $event['message']['text'] != "eX11" 
-				  && $event['message']['text'] != "eX12" 
-				  && $event['message']['text'] != "eX13"
-				  && $event['message']['text'] != "eX14"  
-				  && $event['message']['text'] != "eX15"
+				  && $event['message']['text'] != "eX1" && $event['message']['text'] != "Ex4"
+				  && $event['message']['text'] != "eX2" && $event['message']['text'] != "Ex5"
+				  && $event['message']['text'] != "eX3"&& $event['message']['text'] != "Ex6"
+				   && $event['message']['text'] != "eX4" && $event['message']['text'] != "Ex7"
+				  && $event['message']['text'] != "eX5" && $event['message']['text'] != "Ex8"
+				  && $event['message']['text'] != "eX6" && $event['message']['text'] != "Ex9"
+				  && $event['message']['text'] != "eX7" && $event['message']['text'] != "Ex10"
+				  && $event['message']['text'] != "eX8" && $event['message']['text'] != "Ex11"
+				  && $event['message']['text'] != "eX9"&& $event['message']['text'] != "Ex12"
+				  && $event['message']['text'] != "eX10" && $event['message']['text'] != "Ex13"
+				  && $event['message']['text'] != "eX11" && $event['message']['text'] != "Ex14"
+				  && $event['message']['text'] != "eX12" && $event['message']['text'] != "Ex15"
+				  && $event['message']['text'] != "eX13"&& $event['message']['text'] != "Ex1"
+				  && $event['message']['text'] != "eX14"  && $event['message']['text'] != "Ex2"
+				  && $event['message']['text'] != "eX15"&& $event['message']['text'] != "Ex3"
 				
 				 && $event['message']['text'] != "ท้องผูกTC" && $event['message']['text'] != "ท้องผูกtc" 
 				 && $event['message']['text'] != "ยาระบาย" && $event['message']['text'] != "ยาระบายแมกนีเซียม" 
@@ -727,5 +727,5 @@
 				echo $result . "\r\n";
 		}
 	}
-	echo "OK55599";
-	//echo "mint";
+	//echo "OK55599";
+	echo "mint";
