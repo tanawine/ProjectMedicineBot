@@ -16,9 +16,13 @@
 		 if (( strpos( $textUser,"สวัสดี") 
 		      || strpos( $textUser,"หวัดดี")
 		      || strpos( $textUser,"ดีครับ")
-		      || strpos( $textUser,"ดีค่ะ"))
-		&& ( $event['message']['text'] != "สวัสดี" && $event['message']['text'] != "หวัดดี" && $event['message']['text'] != "ดีครับ"
-		   && $event['message']['text'] != "ดีค่ะ")){ 
+		      || strpos( $textUser,"ดีค่ะ")
+		     || strpos( $textUser,"สวัสดีค่ะ")
+		     || strpos( $textUser,"สวัสดีครับ"))
+		&& ( $event['message']['text'] != "สวัสดี" && $event['message']['text'] != "หวัดดี" 
+		    && $event['message']['text'] != "ดีครับ"&& $event['message']['text'] != "ดีค่ะ"
+		   && $event['message']['text'] != "สวัสดีค่ะ") && $event['message']['text'] != "สวัสดีครับ"
+		    && $event['message']['text'] != "สวัสดีค่ะหมอ") && $event['message']['text'] != "สวัสดีหมอ")){ 
 				// Get text sent
 				$text = " วันนี้สบายดีไหมครับ . ";
 				
