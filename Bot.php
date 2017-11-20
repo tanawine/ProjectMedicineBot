@@ -649,6 +649,7 @@
 				 && $event['message']['text'] != "โคลไตรมาโซล" && $event['message']['text'] != "ตกขาว"
  				 && $event['message']['text'] != "เมือกในช่องคลอด"  && $event['message']['text'] != "ตกขาวทำยังไง" 
 				 && $event['message']['text'] != "ตกขาวทำยังไงดี" && $event['message']['text'] != "ปวดท้อง"
+				 && $event['message']['text'] != "ผื่นแดง"
  				
 				 
 				
